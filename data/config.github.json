@@ -164,6 +164,13 @@
         "profile": "tech-news"
       },
       {
+        "name": "The Batch (DeepLearning.AI)",
+        "url": "https://thebatchdeeplearningai.substack.com/feed",
+        "enabled": true,
+        "category": "ai-news",
+        "profile": "tech-news"
+      },
+      {
         "name": "OpenAI Blog",
         "url": "https://openai.com/blog/rss.xml",
         "enabled": true,
@@ -194,6 +201,13 @@
       {
         "name": "Andrej Karpathy",
         "url": "https://karpathy.bearblog.dev/feed/",
+        "enabled": true,
+        "category": "ai-research",
+        "profile": "tech-news"
+      },
+      {
+        "name": "AI Papers Daily (takara)",
+        "url": "https://papers.takara.ai/api/feed",
         "enabled": true,
         "category": "ai-research",
         "profile": "tech-news"
