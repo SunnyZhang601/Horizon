@@ -9,8 +9,6 @@ title: 每日日报
 
 晨间自动化整理的每日要闻与深读（Horizon 新闻雷达），中英双语：
 
-## 往期日报
-
 <ul>
   {% assign daily_pages = site.pages | where: "dir", "/daily/" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
   {% for p in daily_pages limit:100 %}
@@ -27,8 +25,6 @@ title: 每日日报
 <div id="lang-en" class="lang-section" markdown="1">
 
 An automated morning digest of top stories and deep dives (Horizon News Radar), in Chinese and English:
-
-## Past Reports
 
 <ul>
   {% assign daily_pages_en = site.pages | where: "dir", "/daily/" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
