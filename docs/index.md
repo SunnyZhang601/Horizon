@@ -24,7 +24,7 @@ title: Home
   {% assign covered_dates = covered_dates_str | split: "," %}
   {% assign shown = 0 %}
   {% for p in daily_pages %}
-    {% if shown >= 20 %}{% break %}{% endif %}
+    {% if shown >= 5 %}{% break %}{% endif %}
     <li>
       <a href="{{ p.url | relative_url }}">{{ p.date | date: "%Y-%m-%d" }}</a>
     </li>
@@ -34,7 +34,7 @@ title: Home
   {% endfor %}
   {% for post in zh_posts %}
     {% assign pd = post.date | date: "%Y-%m-%d" %}
-    {% unless covered_dates contains pd or shown >= 20 %}
+    {% unless covered_dates contains pd or shown >= 5 %}
       <li>
         <a href="{{ post.url | relative_url }}">{{ pd }}</a>
       </li>
@@ -51,7 +51,7 @@ title: Home
 
 <ul>
   {% assign ai_pages = site.pages | where: "dir", "/ai-builders/" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
-  {% for p in ai_pages limit:10 %}
+  {% for p in ai_pages limit:5 %}
     <li>
       <a href="{{ p.url | relative_url }}">{{ p.date | date: "%Y-%m-%d" }}</a>
     </li>
@@ -83,7 +83,7 @@ Welcome to [Horizon](https://github.com/thysrael/Horizon), an AI-driven informat
   {% assign covered_dates_en = covered_dates_str_en | split: "," %}
   {% assign shown_en = 0 %}
   {% for p in daily_pages_en %}
-    {% if shown_en >= 20 %}{% break %}{% endif %}
+    {% if shown_en >= 5 %}{% break %}{% endif %}
     <li>
       <a href="{{ p.url | relative_url }}">{{ p.date | date: "%Y-%m-%d" }}</a>
     </li>
@@ -93,7 +93,7 @@ Welcome to [Horizon](https://github.com/thysrael/Horizon), an AI-driven informat
   {% endfor %}
   {% for post in en_posts %}
     {% assign pd = post.date | date: "%Y-%m-%d" %}
-    {% unless covered_dates_en contains pd or shown_en >= 20 %}
+    {% unless covered_dates_en contains pd or shown_en >= 5 %}
       <li>
         <a href="{{ post.url | relative_url }}">{{ pd }}</a>
       </li>
@@ -110,7 +110,7 @@ A bilingual daily digest tracking the people who actually build AI:
 
 <ul>
   {% assign ai_pages_en = site.pages | where: "dir", "/ai-builders/" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
-  {% for p in ai_pages_en limit:10 %}
+  {% for p in ai_pages_en limit:5 %}
     <li>
       <a href="{{ p.url | relative_url }}">{{ p.date | date: "%Y-%m-%d" }}</a>
     </li>

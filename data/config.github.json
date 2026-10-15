@@ -120,6 +120,27 @@
         "enabled": true,
         "category": "linux-kernel",
         "profile": "tech-news"
+      },
+      {
+        "name": "Hackaday",
+        "url": "https://hackaday.com/feed/",
+        "enabled": true,
+        "category": "hardware",
+        "profile": "tech-news"
+      },
+      {
+        "name": "量子位",
+        "url": "https://wechat2rss.xlab.app/feed/7131b577c61365cb47e81000738c10d872685908.xml",
+        "enabled": true,
+        "category": "ai-news",
+        "profile": "tech-news"
+      },
+      {
+        "name": "新智元",
+        "url": "https://wechat2rss.xlab.app/feed/ede30346413ea70dbef5d485ea5cbb95cca446e7.xml",
+        "enabled": true,
+        "category": "ai-news",
+        "profile": "tech-news"
       }
     ],
     "reddit": {
@@ -141,6 +162,24 @@
           "time_filter": "day",
           "fetch_limit": 10,
           "min_score": 60,
+          "profile": "tech-news"
+        },
+        {
+          "subreddit": "robotics",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 30,
+          "profile": "tech-news"
+        },
+        {
+          "subreddit": "embedded",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 30,
           "profile": "tech-news"
         }
       ],

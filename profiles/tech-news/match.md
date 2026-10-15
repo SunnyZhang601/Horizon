@@ -1,6 +1,6 @@
 # Technology news profile
 
-Use this profile for timely developments in software engineering, artificial intelligence, machine learning, computer systems, hardware, open source, and the technology industry.
+Use this profile for timely developments in artificial intelligence and machine learning, robotics and embodied AI, semiconductors and chip technology, embedded systems (microcontrollers, RTOS, FPGA, RISC-V, IoT), hardware and electronics, software engineering, computer systems, open source, and the technology industry.
 
 Typical items include substantial releases, research breakthroughs, security incidents, industry announcements, technical analyses tied to a recent event, and community discussions that add practical insight.
 

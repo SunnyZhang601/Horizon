@@ -1,6 +1,6 @@
 # Technology blog profile
 
-Use this profile for long-form technical writing whose primary value is explanation, argument, experience, or durable engineering insight rather than a timely event alone.
+Use this profile for long-form technical writing whose primary value is explanation, argument, experience, or durable engineering insight rather than a timely event alone, especially deep dives in artificial intelligence, robotics, semiconductors, embedded systems, and hardware.
 
 Typical items include engineering deep dives, implementation walkthroughs, performance investigations, architecture discussions, incident retrospectives, technical tutorials, case studies, and essays that develop a substantive technical argument.
 

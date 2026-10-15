@@ -1,6 +1,6 @@
 # Evaluation goal
 
-Evaluate the importance of timely technology news for readers interested in software engineering, artificial intelligence, machine learning, computer systems, hardware, open source, and the technology industry.
+Evaluate the importance of timely technology news for readers interested in artificial intelligence and machine learning, robotics and embodied AI, semiconductors and chip technology, embedded systems (microcontrollers, RTOS, FPGA, RISC-V, IoT), hardware and electronics, software engineering, computer systems, open source, and the technology industry.
 
 # Scoring rubric
 
@@ -12,6 +12,6 @@ Evaluate the importance of timely technology news for readers interested in soft
 
 # Evaluation guidance
 
-Consider technical depth, novelty, likely impact, source quality, relevance to software engineering and AI systems, and concrete supporting details. Treat substantive community debate as additional evidence of value, but do not equate popularity with technical importance. Do not reward exaggerated headlines.
+Consider technical depth, novelty, likely impact, source quality, relevance to software engineering and AI systems, and concrete supporting details. Weight impact on the reader's core focus areas — AI and machine learning, robotics, semiconductors, embedded systems, and hardware — when judging importance. Treat substantive community debate as additional evidence of value, but do not equate popularity with technical importance. Do not reward exaggerated headlines.
 
 Use three to five specific topic tags.
