@@ -45,6 +45,23 @@ title: Home
 
 <a href="{{ '/ai-builders/' | relative_url }}">查看全部 →</a>
 
+## 每日日报
+
+晨间自动化整理的每日要闻与深读（Horizon 新闻雷达），中英双语：
+
+<ul>
+  {% assign daily_pages = site.pages | where: "dir", "/daily/" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
+  {% for p in daily_pages limit:10 %}
+    <li>
+      <a href="{{ p.url | relative_url }}">{{ p.date | date: "%Y-%m-%d" }}</a>
+    </li>
+  {% else %}
+    <li><em>暂无内容</em></li>
+  {% endfor %}
+</ul>
+
+<a href="{{ '/daily/' | relative_url }}">查看全部 →</a>
+
 </div>
 
 <div id="lang-en" class="lang-section" markdown="1">
@@ -86,5 +103,22 @@ A bilingual daily digest tracking the people who actually build AI:
 </ul>
 
 <a href="{{ '/ai-builders/' | relative_url }}">View all →</a>
+
+## Daily Reports
+
+An automated morning digest of top stories and deep dives (Horizon News Radar), in Chinese and English:
+
+<ul>
+  {% assign daily_pages_en = site.pages | where: "dir", "/daily/" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
+  {% for p in daily_pages_en limit:10 %}
+    <li>
+      <a href="{{ p.url | relative_url }}">{{ p.date | date: "%Y-%m-%d" }}</a>
+    </li>
+  {% else %}
+    <li><em>No reports yet</em></li>
+  {% endfor %}
+</ul>
+
+<a href="{{ '/daily/' | relative_url }}">View all →</a>
 
 </div>
