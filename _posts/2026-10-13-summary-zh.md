@@ -5,6 +5,7 @@ date: 2026-10-13
 lang: zh
 ---
 
+
 > 从 46 条内容中筛选出 14 条重要资讯。
 
 ---
@@ -353,3 +354,78 @@ telegram · zaihuapd · 10月13日 02:45
 **标签**: `#税务处罚`, `#社保欠缴`, `#裁量基准`, `#企业合规`, `#中国政策`
 
 ---
+
+---
+
+## 补充：旧版整合日报独有内容
+
+### 今日要闻补充
+
+> 以下条目摘自当日旧版整合日报，为上方速递版未覆盖的内容。
+
+1. **验证器协调多 LLM 实现多机器人路径规划** ⭐️ 8.0/10
+   提出「验证器中介」的多 LLM 协调架构：几何验证器把候选符号计划落地为轨迹、检测机器人间冲突，再把冲突转为结构化反馈触发定向重规划，从而把**语义任务推理**与**执行层几何可行性**分离；在 CARLA 与 Crazyflie 上评估集中式 vs 去中心式两种架构（**作者声称**，预印本，仅仿真 + 小型无人机）。
+   [arXiv:2610.12761](https://arxiv.org/abs/2610.12761)
+
+2. **AI 编码代理产出更多代码，却没带来更多软件** ⭐️ 7.0/10
+   Ars Technica 援引一项学术研究：代理式编码的增益被**人工代码审查瓶颈**吸收——截至 2026-03，样本中 80% 企业已用某种 AI 代码审查，但代理仅贡献 23.3% 的审查评论与 10.8% 的 PR。社区补充质量问题：代码重复、缺抽象重构、臃肿难读、注释取舍失当（**研究实测**，但数据截至 2026-03，涉 Claude 3.5–Sonnet 4.5 / GPT-4.1–GPT-5 / Gemini 2.5 等较早模型，**报道方提醒结论或已过时**）。
+   [Ars Technica](https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/) · [社区讨论](https://news.ycombinator.com/item?id=50059523)
+
+3. **PS2 游戏静态重编译为 WebAssembly，浏览器直接运行** ⭐️ 7.0/10
+   项目 `ps2-web-recomp` 把 PS2 Emotion Engine 机器码静态重编译为 WASM 在浏览器跑；评论认可技术价值，但担心这类重编译项目缺乏模拟器社区那样的信任与审查机制、可能夹带恶意软件（**作者声称（已开源）**；另有开发者自述在做 PS Vita 的 ARM→WASM 转译器）。
+   [GitHub: snuri00/ps2-web-recomp](https://github.com/snuri00/ps2-web-recomp) · [社区讨论](https://news.ycombinator.com/item?id=50052251)
+
+4. **降雪反而提升 LiDAR 检测精度：点云数量才是主因** ⭐️ 7.0/10
+   研究观察到降雪条件下 LiDAR 检测精度不降反升，归因于降雪带来的点云数量增加而非噪声抑制技巧（**作者声称**，预印本，单篇未复现）。
+   [arXiv:2610.13891](https://arxiv.org/abs/2610.13891)
+
+5. **SmolWAM：面向边缘设备的潜在世界-动作模型** ⭐️ 7.0/10
+   从 2B 参数的 Cosmos Policy 蒸馏：保留主干但重建推理接口、只留 28 个 Transformer 块中的 12 个与 1,008 token，单步整流流读出动作与未来视觉潜在；仅用 3.6 GPU 小时训练，LIBERO 400 回合成功率 95.5%，每 16 动作块 57 ms / 2.3 TFLOP / 2.4 GiB 显存，比教师快 11 倍（**作者声称**，预印本，无独立验证）。
+   [arXiv:2610.13740](https://arxiv.org/abs/2610.13740)
+
+6. **ESP32-S3 上把 320×240 SPI 屏从 16 fps 提到 60 fps** ⭐️ 7.0/10
+    嵌入式开发者实录：ESP-IDF 默认 `-Og` + Xtensa 不支持非对齐加载，使非对齐 2 字节 memcpy 退化成一像素一次函数调用、blit 慢 6 倍；改用查表做着色、SPI 40→80 MHz（150 KB 帧 31 ms→16 ms）、双核 PSRAM 双缓冲、64 字节缓存行对齐后达标，脏矩形因全屏背景变化而无效。引擎 Deki 已开源（**作者实测**，可复现）。
+    [原帖](https://www.reddit.com/r/embedded/comments/1x3xcjd/getting_a_320x240_spi_display_from_16_to_60_fps/) · [Deki 集成](https://github.com/dekiengine/deki-esp32-integration)
+
+7. **小米 M365 V1.4 控制器无感飞启 FOC 实验记录** ⭐️ 7.0/10
+    在 M365 原装控制器（SCO_DRV V1.4 / STM32F103C8T6）上做无霍尔无感 FOC：逆变器关闭时测三相电压，用 BEMF + 双向 PLL 估转子方向与电角度，再近零扭矩平滑切入 FOC。作者已完成三相被动电压采样、PLL 锁定并修正电流采样 ADC 时序问题，但实测线间 BEMF 与固件计算值存在显著偏差，标定未完成即因控制器与 ST-Link 损坏中断（**作者实测自述，明确「非已完成方案」**；无社区评论）。
+    [原帖](https://www.reddit.com/r/embedded/comments/1x4ddsb/i_documented_a_sensorless_flyingstart_foc/) · [EBiCS 参考固件](https://github.com/EBiCS/EBiCS_Firmware)
+
+8. **本窗口延续条目（前一日日报已列，此处只记名）** ⭐️ 8.0/10：PanTact（穿戴接触界面 → 全身接触操作）· AlphaNIST（仅二元奖励从零学 20 项装配，仅仿真）· Workhorse（人类数据学人形全身移动操作）。因抓取窗口与上一轮重叠而再次入选（**作者声称**，均预印本）。
+    [PanTact](https://arxiv.org/abs/2610.12558) · [AlphaNIST](https://arxiv.org/abs/2610.13354) · [Workhorse](https://arxiv.org/abs/2610.09117)
+
+### 领域深读补充
+
+#### 🤖 机器人
+
+- 来源：[arXiv:2610.12761](https://arxiv.org/abs/2610.12761)
+
+**② 人形全身自适应 MPC：负载未知时怎么补力矩**
+
+- 来源：[arXiv:2610.12972](https://arxiv.org/abs/2610.12972)
+
+**③ VICAR：从第三人称视频学到「接触位姿 + 碰撞间隙」都要保住的重定向**
+
+- 来源：[arXiv:2610.13079](https://arxiv.org/abs/2610.13079)
+
+**④ SmolWAM：把世界-动作模型压到边缘设备**
+
+- 来源：[arXiv:2610.13740](https://arxiv.org/abs/2610.13740)
+
+> 本窗口机器人另有大量 7.0 条目（BiGym 2.0 人形家务基准 · 选择性驱动光纤手术机器人 · 烟雾中 LiDAR 失效由雷达接管 · 无地图 GPU 加速 ESDF 的 MAV 避障 · 触觉在线学习安全轻柔抓取 · FACT 保真度感知数字孪生 · PHRetune 阻抗增益离线重调等），不逐一展开。
+
+#### 🔌 嵌入式
+
+- 来源：[原帖](https://www.reddit.com/r/embedded/comments/1x3xcjd/getting_a_320x240_spi_display_from_16_to_60_fps/) · [deki-esp32-integration](https://github.com/dekiengine/deki-esp32-integration)
+
+**② 小米 M365 控制器上的无感飞启 FOC：一份写崩了的实验记录**
+
+- 来源：[原帖](https://www.reddit.com/r/embedded/comments/1x4ddsb/i_documented_a_sensorless_flyingstart_foc/) · [EBiCS_Firmware](https://github.com/EBiCS/EBiCS_Firmware)
+
+> 本窗口嵌入式另有 1 条通讯/安全向条目（联网制冷控制器被远程触发除霜）已在「今日要闻」列明，不重复展开。r/embedded 本次 9 条是**本窗口嵌入式内容的主要来源**，为近几轮少见。
+
+#### 🧠 AI
+
+- 来源：[Ars Technica](https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/) · [社区讨论](https://news.ycombinator.com/item?id=50059523)
+
+**② Codex CLI 的默认守护进程：工具「默认行为」也是一种风险面**

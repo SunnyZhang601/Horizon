@@ -5,6 +5,7 @@ date: 2026-10-14
 lang: zh
 ---
 
+
 > 从 57 条内容中筛选出 16 条重要资讯。
 
 ---
@@ -389,3 +390,32 @@ telegram · zaihuapd · 10月13日 15:19
 **标签**: `#LVMH`, `#luxury goods`, `#China consumer demand`, `#Q3 earnings`, `#trademark dispute`
 
 ---
+
+---
+
+## 补充：旧版整合日报独有内容
+
+### 今日要闻补充
+
+> 以下条目摘自当日旧版整合日报，为上方速递版未覆盖的内容。
+
+1. **开源腱驱动手部外骨骼 TAKTO ONE 发布**（⭐️ 7.0/10 · [r/robotics 原帖](https://www.reddit.com/r/robotics/comments/1x5ojlv/i_built_an_opensource_hand_exoskeleton_what_would/)）
+   一位硕士生的毕业论文项目，在 **12 个手指关节各配一个磁编码器**、另加 2 个 IMU 做追踪（非摄像头视觉），因此手指被遮挡时仍可测量（**作者声称**）。以开源形式提供 CAD、PCB、固件与构建指南，并附一个可在浏览器访问的数字孪生（**作者声称**）。
+
+2. **人形机器人全身避障系统 PASSAGE 测试结果**（⭐️ 7.0/10 · [r/robotics 原帖](https://www.reddit.com/r/robotics/comments/1x5p66q/humanoid_robots_could_navigate_your_cluttered/)）
+   Galbot 的 PASSAGE 让机器人通过蹲下、跨步或侧身调整全身动作避开杂乱空间障碍；在 Unitree G1 上以 45 种障碍布局完成 50 次物理试验、全程未摔倒且无需安全干预（**作者声称**）；但要求必须避免一切接触时，模拟成功率从 98.67% 降至 70.3%（**作者声称**），暴露出显著的仿真到现实差距。
+
+3. **Anthropic 自研源码控制系统 Scion 与评审系统 Antique**（⭐️ 5.0/10 · [Simon Willison](https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/)）
+   据 Simon Willison 转述，Anthropic 半年内代码变更量激增——2026 年 5 月日均合并约 2,500 次，到 9 月已超过 30,000 次；自建系统 Scion 面向极端负载（主分支历史近 100 GB、压缩工作副本超 25 GB、每天约 2,500 万次检出用于 CI），由七人团队五个月完成从 Git 迁移（**作者声称**：转述）。Scion 工程师回应「Claude 是最重的用户且必然在线，故离线支持并不重要」（**作者声称**）。
+
+### 领域深读补充
+
+#### 机器人
+
+- **TAKTO ONE：把「磁编码器 + IMU」做进腱驱动手部外骨骼** —— 这套方案的关键取舍是**放弃摄像头视觉追踪**：12 个手指关节各一个磁编码器直接测关节角，配合 2 个 IMU 做手部姿态，换来的是「手指被遮挡也能测」的鲁棒性。这里给出的是一种「每关节独立磁编码器」的参考实现；其**开源 CAD + PCB + 固件 + 构建指南 + 浏览器数字孪生**的交付形态，也可作为「硬件项目如何对外交付」的一个样本。来源：[r/robotics 原帖](https://www.reddit.com/r/robotics/comments/1x5ojlv/i_built_an_opensource_hand_exoskeleton_what_would/)。
+
+- **PASSAGE：全身避障的「零跌倒」与「禁接触」是两个难度** —— 50 次物理试验零跌倒说明基础避障已具备一定实用性，但把判据从「不摔倒」收紧到「完全不接触」后，模拟成功率 98.67% → 70.3%（**作者声称**）。**「允许碰撞」与「严格禁止接触」在控制上不是同一个问题**，力控/柔顺策略的门槛落在接触约束而非运动学本身。来源：[r/robotics 原帖](https://www.reddit.com/r/robotics/comments/1x5p66q/humanoid_robots_could_navigate_your_cluttered/)。
+
+#### AI
+
+- **Scion / Antique：当 AI 成为代码的主要生产者，版本控制与评审要重做** —— 这条的看点是**数量级**：日均合并 2,500 → 30,000+ 次（**作者声称**：转述），传统为人类开发者优化的 Git 工作流在检出频次与历史体量上先崩。作者也认同文中「对抗式评审有效却可能短视、需资深工程师引导 AI 避免过度工程化」的说法。来源：[Simon Willison](https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/)。

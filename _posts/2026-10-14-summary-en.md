@@ -5,6 +5,7 @@ date: 2026-10-14
 lang: en
 ---
 
+
 > From 57 items, 16 important content pieces were selected
 
 ---
@@ -399,3 +400,32 @@ telegram · zaihuapd · Oct 13, 15:19
 **Tags**: `#LVMH`, `#luxury goods`, `#China consumer demand`, `#Q3 earnings`, `#trademark dispute`
 
 ---
+
+---
+
+## Supplement: Items Unique to the Curated Report
+
+### Top Stories Supplement
+
+> The following items come from that day's curated integrated report and are not covered by the express digest above.
+
+1. **Open-source tendon-driven hand exoskeleton TAKTO ONE released** (⭐️ 7.0/10 · [r/robotics original post](https://www.reddit.com/r/robotics/comments/1x5ojlv/i_built_an_opensource_hand_exoskeleton_what_would/))
+   A master's student's thesis project, with **one magnetic encoder on each of the 12 finger joints** plus 2 IMUs for tracking (no camera vision), so measurements remain possible when fingers are occluded (**Author's claim**). Provided open-source as CAD, PCB, firmware, and build guides, with a browser-accessible digital twin (**Author's claim**).
+
+2. **Test results for PASSAGE, a humanoid whole-body obstacle avoidance system** (⭐️ 7.0/10 · [r/robotics original post](https://www.reddit.com/r/robotics/comments/1x5p66q/humanoid_robots_could_navigate_your_cluttered/))
+   Galbot's PASSAGE lets the robot adjust whole-body motions — crouching, stepping over, or turning sideways — to avoid obstacles in cluttered spaces; on the Unitree G1 it completed 50 physical trials across 45 obstacle layouts with zero falls and no safety interventions (**Author's claim**); but when zero contact is required, the simulated success rate drops from 98.67% to 70.3% (**Author's claim**), exposing a significant sim-to-real gap.
+
+3. **Anthropic's in-house source control system Scion and review system Antique** (⭐️ 5.0/10 · [Simon Willison](https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/))
+   Per Simon Willison's account, Anthropic's code-change volume surged within half a year — about 2,500 merges per day on average in May 2026, exceeding 30,000 by September; the in-house system Scion is built for extreme load (main-branch history near 100 GB, compressed working copies over 25 GB, about 25 million checkouts per day for CI), with a seven-person team completing the migration from Git in five months (**Author's claim**: relayed). A Scion engineer responded that "Claude is the heaviest user and necessarily online, so offline support does not matter" (**Author's claim**).
+
+### Deep Dives Supplement
+
+#### Robotics
+
+- **TAKTO ONE: putting "magnetic encoders + IMU" into a tendon-driven hand exoskeleton** — the key trade-off of this design is **giving up camera-based visual tracking**: one magnetic encoder per finger joint directly measures joint angles, with 2 IMUs for hand pose, in exchange for the robustness of "measurable even when fingers are occluded". What is offered here is a reference implementation of "one independent magnetic encoder per joint"; its **open-source CAD + PCB + firmware + build guide + browser digital twin** delivery form also serves as a sample of "how to deliver a hardware project externally". Source: [r/robotics original post](https://www.reddit.com/r/robotics/comments/1x5ojlv/i_built_an_opensource_hand_exoskeleton_what_would/).
+
+- **PASSAGE: "zero falls" and "no contact allowed" are two different difficulty levels** — 50 physical trials with zero falls show basic obstacle avoidance has reached a certain practicality, but once the criterion tightens from "no falls" to "absolutely no contact", the simulated success rate goes 98.67% → 70.3% (**Author's claim**). **"Collisions allowed" and "contact strictly forbidden" are not the same control problem**; the threshold for force-control/compliance strategies lies in the contact constraint rather than the kinematics itself. Source: [r/robotics original post](https://www.reddit.com/r/robotics/comments/1x5p66q/humanoid_robots_could_navigate_your_cluttered/).
+
+#### AI
+
+- **Scion / Antique: when AI becomes the primary producer of code, version control and review must be redone** — the takeaway here is the **order of magnitude**: 2,500 → 30,000+ merges per day (**Author's claim**: relayed); Git workflows optimized for human developers break first on checkout frequency and history volume. The author also endorses the piece's claim that "adversarial review works but can be short-sighted; senior engineers are needed to steer AI away from over-engineering". Source: [Simon Willison](https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/).

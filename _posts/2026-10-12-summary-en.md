@@ -5,6 +5,7 @@ date: 2026-10-12
 lang: en
 ---
 
+
 > From 33 items, 8 important content pieces were selected
 
 ---
@@ -200,3 +201,87 @@ telegram · zaihuapd · Oct 12, 06:19
 **Tags**: `#中欧贸易`, `#电动汽车`, `#混动汽车`, `#贸易政策`, `#商务部`
 
 ---
+
+---
+
+## Supplement: Items Unique to the Curated Report
+
+### Top Stories Supplement
+
+> The following items come from that day's curated integrated report and are not covered by the express digest above.
+
+1. **PanTact: a wearable contact interface teaching humanoids whole-body dexterous manipulation** ⭐️ 8.0/10
+   Human demonstrations are collected with "a robot-free wearable contact patch + egocentric vision + two UMI grippers", treating **contact location and timing** as manipulation information transferable across embodiments, then transferring it to the Unitree G1 for whole-body manipulation such as body support, pushing, sweeping, and load sharing (**Author's claim**, abstract-level info only, not independently reproduced).
+   [arXiv:2610.12558](https://arxiv.org/abs/2610.12558)
+
+2. **LeWAM: end-to-end JEPA world and action modeling** ⭐️ 8.0/10
+   Jointly trains "next-latent-state prediction" with "action flow matching" and imposes isotropic Gaussian constraints on latent states, so that **the same model can act as a policy and also do planning**. Contact-rich task success rate goes 28.6% → 89.7%, long-horizon 10.9% → 46.2%, with planning speed up 32.3x (**Author's claim**, single preprint, abstract truncated, not reproduced).
+   [arXiv:2610.12818](https://arxiv.org/abs/2610.12818)
+
+3. **AlphaNIST: learning 20 assembly tasks from scratch with only binary rewards** ⭐️ 8.0/10
+   No demonstrations, no progress-shaped rewards, no scripted primitives, no per-task tuning; only sparse binary success rewards train a **single policy** to complete all 20 assemblies of the NIST Assembly Task Board #1 with a training success rate of 98.2%; the policy spontaneously develops planning-like behaviors such as "picking grasp types for later assemblies" and "pre-staging a part" (**Author's claim**, **simulation only**, real transfer unverified).
+   [arXiv:2610.13354](https://arxiv.org/abs/2610.13354) · [Project page](https://alpha-nist.github.io/)
+
+4. **HumanX: learning humanoid robot interaction skills from human video** ⭐️ 8.0/10
+   XGen generates physically feasible robot interaction data from monocular video, and XMimic learns skills from seconds-long demonstrations; 9 skills are learned across five domains (basketball, soccer, badminton, carrying, combat) with zero-shot transfer to G1, including a "pump-fake turn-around fadeaway" and "10 consecutive human-robot passing cycles" (**Author's claim**, preprint, abstract lacks full experimental details).
+   [arXiv:2602.02473](https://arxiv.org/abs/2602.02473)
+
+5. **Workhorse: learning humanoid whole-body loco-manipulation from human data** ⭐️ 8.0/10
+   Trains humanoid whole-body loco-manipulation — "manipulating while walking" — with human data as the main line (**Author's claim**, preprint, listing-only item this window).
+   [arXiv:2610.09117](https://arxiv.org/abs/2610.09117)
+
+6. **SBSRL: sampling-based safe reinforcement learning algorithms** ⭐️ 8.0/10
+   Sampling-based RL algorithms targeting safety constraints (**Author's claim**, preprint, listing-only item this window).
+   [arXiv:2605.19469](https://arxiv.org/abs/2605.19469)
+
+7. **QGIS moves to ban AI-assisted code contributions outright, community debates** ⭐️ 7.0/10
+   A QEP proposal bans "LLM / AI / agent-assisted code contributions", on the grounds that maintainers are overwhelmed by AI-generated PRs and human community trust needs protecting. Opponents note "AI-assisted" lacks an enforceable definition, drawing analogy to the gray zone of GPL "derivative works"; some also argue that **the bottleneck has shifted from writing code to understanding and aligning code** (**proposer's claim + community views**).
+   [Proposal PR](https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387) · ([Community discussion](https://news.ycombinator.com/item?id=50054751))
+
+8. **Browser fingerprinting has become the new tracking method** ⭐️ 7.0/10
+   After third-party cookies exit, fingerprinting (Canvas / WebGL / audio and other high-entropy APIs) has become the main cross-site tracking path; commenters note the EU consent banners target "behavior" rather than "cookie technology", so fingerprinting is equally bound, yet these high-entropy APIs are currently **not behind the browser consent mechanism by default** (**Author's view + community discussion**).
+   [Original](https://royfish.dev/fingerprints-are-the-new-cookies) · ([Community discussion](https://news.ycombinator.com/item?id=50048642))
+
+9. **Type-safe HTML templating in Zig (zt)** ⭐️ 7.0/10
+    An experimental template language zt: compiles HTML templates into Zig at compile time, pursuing compile-time type safety, zero-allocation rendering (writing directly to `std.Io.Writer`), and auto-escaping as the default (**Author's claim**, community consensus is that the Zig web ecosystem is immature and the benefits await benchmark validation).
+    [Original](https://lalinsky.com/2026/10/11/type-safe-html-templating-in-zig.html) · ([Community discussion](https://news.ycombinator.com/item?id=50051573))
+
+10. **Postgres performance bottlenecks are often in storage, not the database** ⭐️ 7.0/10
+    A POSETTE 2026 talk recap: when troubleshooting, look at storage I/O first, not query plans. Case: after RDS `r8g` → `r8gd` (adding local NVMe), average I/O latency went about 1.0 ms → 0.1 ms (**a practitioner's personal experience**, not a controlled benchmark; gains vary with workload and deployment environment).
+    [Recap article](https://clickhouse.com/blog/posette-talk-recap-postgres-isnt-slow-your-storage-is) · ([Community discussion](https://news.ycombinator.com/item?id=50052163))
+
+11. **PHRetune: offline calibration of robot-arm impedance controller gains** ⭐️ 7.0/10
+    Learns a port-Hamiltonian model from demonstrations to estimate the force and energy corresponding to actions, and after comparing against a "demonstration-derived force/energy budget" **solves in closed form for a single gain scaling coefficient**; no prior model, no task rewards, no policy retraining, and no extra runtime computation. On LIBERO it lifts Diffusion Policy success rates by up to 9.4 percentage points, beating baselines on all 4 real manipulation tasks (**Author's claim**, preprint, cross-hardware generalization unverified).
+    [arXiv:2610.05755](https://arxiv.org/abs/2610.05755)
+
+12. **MagCilia: a compact magnetic-cilia tactile sensor achieving 3D force sensing** ⭐️ 7.0/10
+    Flexible magnetic cilia + Hall sensors form a single compact unit, paired with "causal history fusion regression (CHFR)" to reconstruct coupled forces; five-fold cross-validation gives RMSE of 0.40 / 0.57 / 0.69 N for Fx/Fy/Fz, with R² of 0.93 / 0.90 / 0.92; six-class surface recognition accuracy 99.39% (**Author's claim**, preprint, performance based on specific calibration conditions).
+    [arXiv:2610.09536](https://arxiv.org/abs/2610.09536)
+
+### Deep Dives Supplement
+
+#### 🤖 Robotics
+
+- Source: [arXiv:2610.05755](https://arxiv.org/abs/2610.05755)
+
+**② MagCilia: packing "multi-axis force + surface recognition" into one compact unit**
+
+- Source: [arXiv:2610.09536](https://arxiv.org/abs/2610.09536)
+
+**③ Two more 8.0 robotics items this window worth naming (listed only, not expanded)**: PanTact (wearable contact interface → whole-body contact manipulation, **contact as cross-embodiment transferable information**) · AlphaNIST (**only sparse binary rewards** from scratch to a single policy on 20 assembly tasks, simulation only). Both point to the same direction: **reducing dependence on "carefully designed intermediate representations"** — one removes the robot embodiment and body sensors, the other removes demonstrations and progress rewards.
+
+- Sources: [PanTact](https://arxiv.org/abs/2610.12558) · [AlphaNIST](https://arxiv.org/abs/2610.13354)
+
+**④ Other relevant items this window (index)**: BiGym 2.0 (a 20-task household-chore benchmark on the G1 humanoid, including equal-budget comparison of VLAs / imitation / demonstration-driven RL / coding agents) · Reflex (vision-driven reactive object catching) · tactile perception enabling safe gentle grasping of unknown objects · selectively actuated fiber robot (sub-100-micron precision for minimally invasive surgery) · mobile-robot precision pushing of multiple objects.
+
+- Sources: [BiGym 2.0](https://arxiv.org/abs/2610.07594) · [Tactile gentle grasping](https://arxiv.org/abs/2610.12790) · [Fiber robot](https://arxiv.org/abs/2610.12636)
+
+#### 🧠 AI
+
+- Sources: [Proposal PR](https://github.com/qgis/QGIS-Enhancement-Proposals/pull/387) · [Community discussion](https://news.ycombinator.com/item?id=50054751)
+
+**③ LeWAM: world model and policy fused into "one model"**
+
+- Source: [arXiv:2610.12818](https://arxiv.org/abs/2610.12818)
+
+> Four more non-robotics topics (browser fingerprinting replacing cookies as a tracking mechanism, Zig compile-time type-safe HTML templating, Postgres bottlenecks in storage I/O, the Passkey attestation and portability debate) are already listed in "Top Stories" and are not repeated here.

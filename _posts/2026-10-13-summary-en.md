@@ -5,6 +5,7 @@ date: 2026-10-13
 lang: en
 ---
 
+
 > From 46 items, 14 important content pieces were selected
 
 ---
@@ -356,3 +357,78 @@ telegram · zaihuapd · Oct 13, 02:45
 **Tags**: `#税务处罚`, `#社保欠缴`, `#裁量基准`, `#企业合规`, `#中国政策`
 
 ---
+
+---
+
+## Supplement: Items Unique to the Curated Report
+
+### Top Stories Supplement
+
+> The following items come from that day's curated integrated report and are not covered by the express digest above.
+
+1. **Verifier coordinating multiple LLMs for multi-robot path planning** ⭐️ 8.0/10
+   Proposes a "verifier-mediated" multi-LLM coordination architecture: a geometric verifier grounds candidate symbolic plans into trajectories, detects inter-robot conflicts, and converts conflicts into structured feedback that triggers targeted replanning, thereby separating **semantic task reasoning** from **execution-level geometric feasibility**; evaluated on CARLA and Crazyflie for centralized vs decentralized architectures (**Author's claim**, preprint, simulation + small UAVs only).
+   [arXiv:2610.12761](https://arxiv.org/abs/2610.12761)
+
+2. **AI coding agents produce more code but not more software** ⭐️ 7.0/10
+   Ars Technica cites an academic study: the gains of agentic coding are absorbed by the **manual code review bottleneck** — as of 2026-03, 80% of enterprises in the sample already used some form of AI code review, yet agents contributed only 23.3% of review comments and 10.8% of PRs. The community adds quality problems: code duplication, missing abstraction refactoring, bloat and unreadability, misplaced comment trade-offs (**study-measured**, but the data is as of 2026-03 and covers earlier models like Claude 3.5–Sonnet 4.5 / GPT-4.1–GPT-5 / Gemini 2.5; **the report itself warns the conclusion may be outdated**).
+   [Ars Technica](https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/) · ([Community discussion](https://news.ycombinator.com/item?id=50059523))
+
+3. **PS2 games statically recompiled to WebAssembly, running directly in the browser** ⭐️ 7.0/10
+   The project `ps2-web-recomp` statically recompiles PS2 Emotion Engine machine code to WASM to run in the browser; commenters recognize the technical value but worry such recompilation projects lack the trust and review mechanisms of emulator communities and could smuggle malware (**Author's claim (open-sourced)**; another developer self-reports working on an ARM→WASM transpiler for PS Vita).
+   [GitHub: snuri00/ps2-web-recomp](https://github.com/snuri00/ps2-web-recomp) · ([Community discussion](https://news.ycombinator.com/item?id=50052251))
+
+4. **Snowfall instead improves LiDAR detection accuracy: point-cloud density is the main factor** ⭐️ 7.0/10
+   The study observes that LiDAR detection accuracy improves rather than degrades under snowfall, attributed to the increased point-cloud density brought by snow rather than noise-suppression tricks (**Author's claim**, preprint, single paper, not reproduced).
+   [arXiv:2610.13891](https://arxiv.org/abs/2610.13891)
+
+5. **SmolWAM: a latent world-action model for edge devices** ⭐️ 7.0/10
+   Distilled from the 2B-parameter Cosmos Policy: keeps the backbone but rebuilds the inference interface, keeping only 12 of 28 Transformer blocks and 1,008 tokens, with single-step rectified flow reading out actions and future visual latents; trained in only 3.6 GPU hours, 95.5% success on 400 LIBERO episodes, 57 ms / 2.3 TFLOP / 2.4 GiB VRAM per 16-action chunk, 11x faster than the teacher (**Author's claim**, preprint, no independent verification).
+   [arXiv:2610.13740](https://arxiv.org/abs/2610.13740)
+
+6. **Taking a 320×240 SPI display on ESP32-S3 from 16 fps to 60 fps** ⭐️ 7.0/10
+    An embedded developer's write-up: ESP-IDF's default `-Og` plus Xtensa's lack of unaligned-load support makes unaligned 2-byte memcpy degrade into one function call per pixel, slowing the blit 6x; after switching to LUT-based colorization, SPI 40→80 MHz (150 KB frame 31 ms→16 ms), dual-core PSRAM double buffering, and 64-byte cache-line alignment the target was met, and dirty rectangles proved useless because the full-screen background changes. The engine Deki is open-sourced (**Author's measurement**, reproducible).
+    [Original post](https://www.reddit.com/r/embedded/comments/1x3xcjd/getting_a_320x240_spi_display_from_16_to_60_fps/) · [Deki integration](https://github.com/dekiengine/deki-esp32-integration)
+
+7. **Experiment log: sensorless flying-start FOC on a Xiaomi M365 V1.4 controller** ⭐️ 7.0/10
+    Sensorless, hall-less FOC on the stock M365 controller (SCO_DRV V1.4 / STM32F103C8T6): three-phase voltages are measured with the inverter off, BEMF + bidirectional PLL estimate rotor direction and electrical angle, then FOC is engaged smoothly at near-zero torque. The author has completed passive three-phase voltage sampling, PLL locking, and fixed a current-sampling ADC timing issue, but measured line-to-line BEMF deviates significantly from the firmware's computed value, and calibration was interrupted by damage to the controller and ST-Link before completion (**author's self-reported measurement, explicitly "not a finished solution"**; no community comments).
+    [Original post](https://www.reddit.com/r/embedded/comments/1x4ddsb/i_documented_a_sensorless_flyingstart_foc/) · [EBiCS reference firmware](https://github.com/EBiCS/EBiCS_Firmware)
+
+8. **Carried-over items this window (already listed in the previous day's report, name-only here)** ⭐️ 8.0/10: PanTact (wearable contact interface → whole-body contact manipulation) · AlphaNIST (learning 20 assemblies from scratch with binary rewards only, simulation only) · Workhorse (humanoid whole-body loco-manipulation from human data). Re-selected because the crawl window overlaps the previous round (**Author's claim**, all preprints).
+    [PanTact](https://arxiv.org/abs/2610.12558) · [AlphaNIST](https://arxiv.org/abs/2610.13354) · [Workhorse](https://arxiv.org/abs/2610.09117)
+
+### Deep Dives Supplement
+
+#### 🤖 Robotics
+
+- Source: [arXiv:2610.12761](https://arxiv.org/abs/2610.12761)
+
+**② Whole-body adaptive MPC for humanoids: compensating torque when the load is unknown**
+
+- Source: [arXiv:2610.12972](https://arxiv.org/abs/2610.12972)
+
+**③ VICAR: retargeting from third-person video that preserves both "contact poses + collision clearances"**
+
+- Source: [arXiv:2610.13079](https://arxiv.org/abs/2610.13079)
+
+**④ SmolWAM: compressing the world-action model down to edge devices**
+
+- Source: [arXiv:2610.13740](https://arxiv.org/abs/2610.13740)
+
+> Many other 7.0 robotics items this window (BiGym 2.0 humanoid chore benchmark · selectively actuated fiber surgical robot · LiDAR failing in smoke handed off to radar · MAV obstacle avoidance with mapless GPU-accelerated ESDF · tactile online learning of safe gentle grasping · FACT fidelity-aware digital twins · PHRetune offline impedance-gain retuning, etc.) are not expanded one by one.
+
+#### 🔌 Embedded
+
+- Sources: [Original post](https://www.reddit.com/r/embedded/comments/1x3xcjd/getting_a_320x240_spi_display_from_16_to_60_fps/) · [deki-esp32-integration](https://github.com/dekiengine/deki-esp32-integration)
+
+**② Sensorless flying-start FOC on the Xiaomi M365 controller: an experiment log that broke down**
+
+- Sources: [Original post](https://www.reddit.com/r/embedded/comments/1x4ddsb/i_documented_a_sensorless_flyingstart_foc/) · [EBiCS_Firmware](https://github.com/EBiCS/EBiCS_Firmware)
+
+> One more communications/security-oriented embedded item this window (networked refrigeration controllers remotely triggered to defrost) is already listed in "Top Stories" and is not repeated. r/embedded's 9 items this time are **the main source of this window's embedded content**, a rarity in recent rounds.
+
+#### 🧠 AI
+
+- Sources: [Ars Technica](https://arstechnica.com/ai/2026/10/ai-coding-agents-generate-more-code-but-not-more-software/) · [Community discussion](https://news.ycombinator.com/item?id=50059523)
+
+**② Codex CLI's default daemon: a tool's "default behavior" is also a risk surface**
