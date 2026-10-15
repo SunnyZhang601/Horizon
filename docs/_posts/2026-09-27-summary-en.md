@@ -1,57 +1,9 @@
 ---
 layout: default
-title: 每日日报 2026-09-27
+title: "Horizon Summary: 2026-09-27 (EN)"
 date: 2026-09-27
+lang: en
 ---
-
-<div id="lang-zh" class="lang-section" markdown="1">
-
-# 2026-09-27 日报
-
-> 数据源：Horizon（24h 窗口，抓取 22 条 → 过阈值 3 条）。本窗口条目全部来自 Hacker News；机器人 / 嵌入式 / EE-IC 三个方向零条达标，已在第二节如实标注，未硬凑。
-> 每条均标来源性质（估算 / 作者声称 / 实测 / 助手推断 / 待核实）；同一数据在全文保持同一口径。
-
-## 一、今日要闻
-
-1. **DeepSeek 弹性计算论文《DSec》引发并发规模讨论** ⭐️ 8.0/10
-   [arXiv 原文](https://arxiv.org/abs/2609.22978) · [社区讨论](https://news.ycombinator.com/item?id=49859112)
-   DeepSeek 发布生产级沙箱平台系统论文，社区转述其「160 个 EPYC 节点上 38 万个并发沙箱」；讨论焦点反而集中在异常庞大的作者名单上。（**作者声称** —— 规模数字来自社区评述，论文摘要与性能数据本窗口未取得原文核实）
-
-2. **陶哲轩：AI 数学进步需要更多人类数学家** ⭐️ 7.0/10
-   [博客原文](https://terrytao.wordpress.com/2026/09/24/were-gonna-need-a-lot-more-mathematicians/) · [社区讨论](https://news.ycombinator.com/item?id=49852717)
-   陶哲轩主张 AI 兑现数学潜力后会产出更多、更深的思想，因此需要能共同理解它们的繁荣人类社群；HN 帖 358 分、461 条评论。（**作者声称** —— 本窗口仅见标题、链接与评论摘录，未见正文论证细节）
-
-3. **Floci：本地模拟任意云服务的开源工具** ⭐️ 7.0/10
-   [项目主页](https://floci.io/) · [GitHub](https://github.com/floci-io/floci) · [社区讨论](https://news.ycombinator.com/item?id=49854416)
-   通过 Docker 在本地模拟 AWS / Azure / GCP / OCI，无需真实云凭证；支持者认为比 LocalStack 更轻量，质疑者担心模拟 API 与真实服务的行为漂移。（**作者声称** —— 能力与「免费」表述来自项目自述）
-
-## 二、领域深读（机器人 · 嵌入式 · EE/IC · AI）
-
-### 机器人
-
-- **本窗口无达标条目**（**实测** —— 22 条候选中来自 arXiv cs.RO 的新增条目本窗口为零，未过 7.0 阈值；不硬凑）。原因：本窗口非 arXiv 源占比高（HN 8 · Reddit 7 · RSS 7），RSS 侧 cs.RO 无新增达标项，The Robot Report RSS 仍 403。
-
-### 嵌入式
-
-- **本窗口无达标条目**（**实测** —— 未过阈值，不硬凑）。Embedded.com RSS 本次未产出达标条目。
-
-### EE/IC
-
-- **本窗口无独立条目**（**实测** —— 未过阈值，不硬凑）。本窗口唯一与「算力/系统」沾边的 DSec 属 AI 基础设施，已归入下方 AI 小节，不计入 EE/IC。
-
-### AI
-
-- **话题：生产级沙箱基础设施的规模叙事** —— DSec 宣称的「按负载弹性伸缩而非按峰值预留」思路，与当前 agent 大规模并发执行的环境隔离需求同向。（**作者声称**）
-
-- **话题：AI 时代的「验证与理解」权重上升** —— 陶哲轩文章与 HN 评论区共同指向一个观察：当 AI 承担更多定理证明与代码生成后，人类价值更多转向**验证、理解与领域建模**；评论中有工程师提到「逐行审查 LLM 代码发现问题变少，不确定是模型变强还是自己因交付压力放松了审查」。（**作者声称** + 社区观点）
-
-- **话题：本地优先的测试与模拟** —— Floci 代表「不依赖真实云凭证、本地起全栈模拟」的开发范式；社区对其最大分歧是模拟与真实环境的行为漂移。（**作者声称** + 社区观点）
-
-</div>
-
-<div id="lang-en" class="lang-section" markdown="1">
-
-# Daily Report — 2026-09-27
 
 > Data source: Horizon (24h window, 22 items crawled → 3 items passed the threshold). All items in this window came from Hacker News; the robotics / embedded / EE-IC directions had zero qualifying items, faithfully annotated in Section 2 — not padded.
 > Every item is tagged with its source nature (Estimated / Author's claim / Measured / Assistant inference / To be verified); the same figure keeps the same basis throughout the document.
@@ -91,5 +43,3 @@ date: 2026-09-27
 - **Topic: "verification and understanding" gain weight in the AI era** — Terence Tao's article and the HN comment thread both point to one observation: once AI takes on more theorem proving and code generation, human value shifts toward **verification, understanding, and domain modeling**; one engineer in the comments noted that "line-by-line review of LLM code is turning up fewer problems, and I can't tell whether the model got stronger or I've relaxed my review under delivery pressure". (**Author's claim** + community view)
 
 - **Topic: local-first testing and emulation** — Floci represents the development paradigm of "spinning up full-stack emulation locally without real cloud credentials"; the community's biggest disagreement is behavioral drift between emulation and real environments. (**Author's claim** + community view)
-
-</div>

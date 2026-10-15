@@ -1,101 +1,9 @@
 ---
 layout: default
-title: 每日日报 2026-09-23
+title: "Horizon Summary: 2026-09-23 (EN)"
 date: 2026-09-23
+lang: en
 ---
-
-<div id="lang-zh" class="lang-section" markdown="1">
-
-# 2026-09-23 日报
-
-> 数据源：Horizon 新闻雷达。
-> 本次窗口**抓取 340 条 → 过 7.0 阈值 225 条**（RSS 319 · Reddit 12 · Hacker News 9 · Telegram 0）。**RSS 中 arXiv 占据绝对多数**，本日要闻因此以机器人与具身智能方向为主。
-> 每条标注来源性质：**估算 / 作者声称 / 实测 / 助手推断**；无法独立验证的标「待核实」。arXiv 条目均为**预印本、未经同行评审**。
-
-## 一、今日要闻
-
-1. **[OpenAI 发布 GPT-6 Sol 与 Luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/)** ⭐️ 9.0/10 — 距 GPT-6 Astra 仅 19 天再发两档模型：Sol 面向能力、Luna 面向成本，输入/输出价格均为上一代对应型号的一半（Sol 为每百万 token $2/$10，Luna 为 $0.10/$0.50），缓存读取 90% 折扣、缓存写入 25% 溢价。（来源性质：**作者声称**（官方公告）＋社区转述，具体规格**待核实**）[社区讨论](https://news.ycombinator.com/item?id=49805509)
-2. **[Anthropic 发布 Claude Opus 5.5：降价并调整沟通风格](https://www.anthropic.com/claude-opus-5-5)** ⭐️ 8.0/10 — 输入价 $5→$4、输出 $25→$20（降约 20%），支持 1M 上下文；第三方称编码性能对标 Fable 5.1、典型负载成本降约 40%。社区把「一边呼吁 frontier 节奏控制、一边持续发布」当作讨论焦点。（来源性质：**作者声称**；规格与定价来自第三方整理，**待核实**）
-3. **[WordPress 修复未认证路径遍历致条件 RCE 漏洞](https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp)** ⭐️ 8.0/10 — CVE-2026-87902，CVSS 4.0 评分 9.2，影响 4.7.0–7.1.1；7.1.2 已修复并向后移植到 4.7 分支。社区指出受影响函数 `locate_template()` 的官方文档九年前就警告其不防目录遍历。（来源性质：**作者声称**（安全公告））
-4. **[机器人世界模型对「动作怎么写」不具不变性](https://arxiv.org/abs/2609.23252)** ⭐️ 8.0/10 — 用绝对关节目标或相对增量训练的潜在动力学模型，遇到同一轨迹的另一种编码时**严重崩溃而非平滑退化**：检索性能降 2.6–13.4 倍，目标条件动作选择 53%→15%，PushT 上对同一未来的两种信念近乎正交（cos=0.067）。作者给出区分「有效重参数化」与「有损摘要」的检验，并拒绝了所提四个轴中的三个。（来源性质：**作者声称**，预印本）
-5. **[FoldQuantVLA：VLA 模型原生低比特量化](https://arxiv.org/abs/2609.24433)** ⭐️ 8.0/10 — 训练后量化，靠通道缩放 + 块 Hadamard 变换 + 动态逐 token 量化保持激活表示一致，用自定义 TensorRT 插件在 Ada GPU 与 **Jetson AGX Orin** 上跑 W4A4。GR00T / π0.5 上获 1.20–1.52 倍加速；语言注意力输出与前馈下投影保留 8 位后，真机成功率 80.0%→92.5%，代价是 Orin 上多约 1 ms 延迟。（来源性质：**作者声称**，预印本）
-6. **[N0-Foundation：触觉智能的具身操作基础设施](https://arxiv.org/abs/2608.29601)** ⭐️ 8.0/10 — 把触觉传感硬件、触觉版 UMI、同步视触觉采集、表征模型与评测基准打成一套：NeoData 含 **30,000+ 小时**同步视觉-触觉演示（6 种本体 / 450 项任务 / 数十亿对 RGB-触觉帧），开放 5,000 小时子集 OpenNeoData；面向可变形物体、精密装配、精细力控。摘要被截断，**无具体结果数据**。（来源性质：**作者声称**，预印本）
-7. **[DexTacWAM：视触觉世界-动作模型提升灵巧操作](https://arxiv.org/abs/2609.24976)** ⭐️ 8.0/10 — 把触觉潜变量注入视频扩散世界模型，22 自由度双臂平台上六个接触密集任务平均 70.6 分（最强基线 38.0）。关键消融：**去掉「触觉世界建模」只留触觉条件化，四项任务均值 74.7→26.6** —— 增益来自把接触演化当作要预测的世界状态。（来源性质：**作者声称**，预印本，单篇待独立验证）
-8. **[高效可微机器人仿真统一框架](https://arxiv.org/abs/2409.07107)** ⭐️ 8.0/10 — 覆盖动力学、碰撞与摩擦，用隐式微分算解析导数并显式处理非光滑性、利用多体结构稀疏性：7 自由度机械臂约 **5 微秒**、36 自由度人形约 **95 微秒**，比替代方法快至少两个数量级。C++ 实现，评审后开源。（来源性质：**作者声称**，预印本）
-9. **[Uranus：数据驱动的机器人仿真基础设施](https://arxiv.org/abs/2609.24815)** ⭐️ 8.0/10 — 以关节轨迹为条件的自回归扩散仿真器，替代人工搭建的传统仿真：支持流式开放式推演（在线接收未来关节轨迹、逐步生成潜帧）、推理优化后 **24 FPS**、跨本体与相机配置统一多视角生成。代码与权重已开源。（来源性质：**作者声称**，预印本，无独立验证）
-10. **[双层电子皮肤实现剪切力感知](https://arxiv.org/abs/2609.22493)** ⭐️ 7.0/10 — 双层层叠 FSR 阵列：柔性晶格弹性体间隔层把剪切载荷转成层间位移，表现为两层间**压力中心（CoP）偏移**；用力矩平衡建模、CNN-GRU 补非线性。Fx R²=0.914 / Fy R²=0.944，优于单层基线；深层跟踪整体平移旋转、表层跟踪接触面滑移，**两层总压力响应差的瞬态**对滑移检测最灵敏。（来源性质：**作者声称**，预印本，摘要被截断）
-11. **[面向任务的机器人齿轮执行器协同设计优化框架](https://arxiv.org/abs/2609.22795)** ⭐️ 7.0/10 — 针对「按部件级指标（扭矩/功率密度）优化、缺乏任务导向」的问题，做电机-齿轮箱-传感器的系统级协同优化，并为每个硬件候选解出贝塞尔参数化关节扭矩曲线。制作了实物原型：额定输出扭矩密度 **35.7 N·m/kg**，比一款在用商用齿轮关节执行器高约 60%、轻 18.6%；台架同条件下以两倍额定扭矩取得 **12.0% 更高跳跃高度**。（来源性质：**作者声称**，含原型台架**实测**数据；验证仅限二自由度跳跃腿单一平台）
-12. **[宏观尺度静电折纸旋转电机](https://arxiv.org/abs/2601.21976)** ⭐️ 7.0/10 — 首个可折叠平放、展开后连续旋转的宏观尺度电机：**靠电晕放电产生扭矩**（不嵌入线性执行器、不外挂旋转电机），展开比 >3.8:1；-30 kV 驱动下最高 1720 rpm、最大扭矩 >0.25 mN·m、有源组件扭矩密度 0.11 N·m/kg。（来源性质：**作者声称**，预印本；扭矩量级低，短期工程影响有限）
-13. **[vla.cpp：面向 VLA 模型的统一 C++ 推理运行时](https://arxiv.org/abs/2606.08094)** ⭐️ 7.0/10 — 覆盖 11 种 VLA 模型、**不依赖 PyTorch**，共享模型加载/张量执行/服务逻辑并保留各架构特有能力。BitVLA 在 **8GB Jetson Orin Nano** 上跑完 200/200 个 LIBERO-Object 回合；三值张量核心内核在 RTX 3060 与 AGX Orin 上较 CUDA 核心基线加速 4.0–4.6 倍。（来源性质：**作者声称**，预印本）
-14. **[vla.simd：语言条件操作策略的 CPU 推理引擎](https://arxiv.org/abs/2609.24274)** ⭐️ 7.0/10 — 共享 SIMD 微内核，六种策略 / 四种 CPU 上相对编译版 PyTorch 约 1.4 倍中位加速且保持 fp32 保真。配套 IMPACT 策略在 **Raspberry Pi 5** 上热稳定 90 秒后 fp32 达 33.5 actions/s、int8 达 81.2 actions/s。（来源性质：**作者声称**，预印本）
-15. **[Jet 嵌入式 3D 引擎性能翻倍并改用 MIT 许可](https://github.com/CubeCoders/Jet)** ⭐️ 7.0/10 — ESP32-S3 上三角形吞吐从约 40k tris/sec 提升到约 **70k tris/sec**（作者称得益于优化与 SIMD 技巧），480×320 / 16bpp / 60fps，支持屏幕空间反射；许可由 AGPL 改为 **MIT**。（来源性质：**作者声称**；Avalonia 中的「650 tris@60fps」为 Hackaday 转述**实测**）[社区讨论](https://www.reddit.com/r/embedded/comments/1wnmjfq/the_jet_embedded_3d_engine_is_not_only_now/)
-16. **[黑客声称窃取全体 FBI 员工数据](https://www.404media.co/we-hacked-the-fbi-hackers-say-they-have-data-on-all-fbi-employees/)** ⭐️ 7.0/10 — ShinyHunters 声称已入侵多个与 FBI 相关服务，数据含探员姓名、家庭住址、电话及配偶信息，FBI 招聘网站据称被篡改下线。（来源性质：**待核实** —— 声明尚未获独立验证，路透社仅部分佐证）[社区讨论](https://news.ycombinator.com/item?id=49805278)
-17. **[Trail of Bits 批评 SAML「分形般的坏设计」](https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/)** ⭐️ 7.0/10 — 指出 SAML 的 XML 规范化、信封签名与规范拼合带来长期签名包装与解析器差异风险，建议迁移 OIDC。社区反方观点：IdP 发起的流程等企业 SSO 特性 OIDC 仍难替代，面向企业售卖通常要两者都支持。（来源性质：**作者声称**）[社区讨论](https://news.ycombinator.com/item?id=49806335)
-18. **[机器人测试时物理诊断的六条件框架与证据使用失败](https://arxiv.org/abs/2609.22299)** ⭐️ 7.0/10 — 提出诊断必须满足的六个有序条件；受控环境链条端到端成立，**迁移到未见机制后在「证据使用」环节断裂**：需要完整轨迹的决策上冻结解码器不改变选择，决策降至随机水平，而低成本证据可解决的决策仍正确，这种分化被总体准确率掩盖。（来源性质：**作者声称**，预印本）
-19. **[触觉与力反馈何时超越视觉？杂乱场景灵巧抓取研究](https://arxiv.org/abs/2609.24068)** ⭐️ 7.0/10 — 真实世界受控对比：组合（视觉+扳手+指尖触觉阵列）25 次试验成功 24 次，仅视觉 14 次；三种受限场景组合 15/15、仅视觉 6/15。消融显示**扳手反馈与触觉阵列互补**，交互反馈让系统更早拒绝不充分接触并抬升前重新抓取。（来源性质：**作者声称**，预印本）
-20. **[Tactile-JEPA：分布式触觉传感器的拓扑感知自监督预训练](https://arxiv.org/abs/2609.24385)** ⭐️ 7.0/10 — 用传感器连接图引导空间掩码、双尺度掩码同时捕捉局部接触与全局状态；三个数据集上力估计误差降 6.3%、手内姿态误差降 20.8%。代码已公开。（来源性质：**作者声称**，预印本）
-
-## 二、领域深读（机器人 · 嵌入式 · EE/IC · AI）
-
-> 本次 225 条达标项以 arXiv 为主体（RSS 319 条中 arXiv 占绝大多数），机器人与具身智能方向异常密集；下述按主题归并，只讲「为什么值得看」。
-
-### 机器人
-
-**① 触觉这天从「一个传感器」变成了「一整套基础设施」** —— [N0-Foundation](https://arxiv.org/abs/2608.29601) · [DexTacWAM](https://arxiv.org/abs/2609.24976) · [双层电子皮肤](https://arxiv.org/abs/2609.22493) · [Tactile-JEPA](https://arxiv.org/abs/2609.24385) · [触觉 vs 视觉](https://arxiv.org/abs/2609.24068)
-
-- **分析**：五条撞在同一天，但层级完全不同，合起来正好是一条从硬件到表征到评测的链。硬件层（双层 FSR）解决的是「单层只能测法向力」——它不靠增加换能器数，而是把剪切载荷转成**层间压力中心偏移**，这是个几何解耦技巧；表征层（Tactile-JEPA）解决的是「电子皮肤的传感元件稀疏且不规则排列，直接套视觉自监督不是最优」——所以掩码必须由**传感器连接图**而不是像素网格来引导；数据层（N0-Foundation）用 30,000 小时同步数据 + 触觉版 UMI 把采集门槛拉平，并刻意把数据分布压向可变形物体、精密装配、精细力控这些视觉短板；模型层（DexTacWAM）给出了最锋利的一个结论 —— **把触觉当条件输入不够，必须把接触演化当作要预测的世界状态**，去掉这一点四项任务从 74.7 掉到 26.6；对照组（触觉 vs 视觉）则回答了「花这笔钱值不值」——乱场景下仅视觉 14/25、加入扳手与触觉阵列 24/25。（来源性质：均为**作者声称**，其中双层电子皮肤的 R² 与触觉 vs 视觉的成功次数为论文自报实验值）
-
-**② 「动作怎么表达」正在从工程细节升级为一致性风险** —— [世界模型不变性](https://arxiv.org/abs/2609.23252) · [vla.cpp](https://arxiv.org/abs/2606.08094)
-
-- **分析**：前者是这一天最值得单独读的一篇。用绝对关节目标还是相对增量训练，以往被当作无害的实现选择，结果它**静默地决定了动作条件世界模型能不能用**：同一轨迹换个编码，检索降 2.6–13.4 倍、动作选择 53%→15%，且 PushT 上对同一未来的两种信念近乎正交（cos=0.067）—— 说明预测器不是退化，而是在回答另一个问题。更有分量的是它给了一套**判别框架**：先检验两种编码能否互相重建（R²=0.996，信息没丢），再区分「有效重参数化 / 有损摘要 / 传感器替换」，并据此否掉了自己提出的四个轴中的三个。修复方案（对目标取平均）也留了尾巴：最坏一致性 0.78，加不一致惩罚才到 0.995，且在 PushT 上单靠平均修不好。vla.cpp 提供了一个同源的工程佐证：SmolVLA 案例里**位置索引精度直接关联夹爪命令与任务成功率**，作者因此强调「固定输入的数值检查必须伴随 rollout 评估」。（来源性质：均为**作者声称**，预印本）
-
-**③ 仿真与执行器在同一周被「从需求端重构」** —— [Uranus](https://arxiv.org/abs/2609.24815) · [可微仿真框架](https://arxiv.org/abs/2409.07107) · [齿轮执行器协同设计](https://arxiv.org/abs/2609.22795)
-
-- **分析**：三者都在拆同一种老结构。仿真侧，Uranus 干脆放弃人工建模，用「关节轨迹条件化的自回归扩散」直接生成画面并做到 24 FPS 流式输出；可微仿真框架则走另一头 —— 把导数算得极快（7 自由度 5 微秒、36 自由度 95 微秒，快两个数量级以上）以喂饱强化学习与轨迹优化。执行器侧，齿轮执行器那条指出「按扭矩密度/功率密度这类**部件级指标**优化，未必转成任务上的更好机器人」，改为任务导向的系统级协同设计，并给出实物：35.7 N·m/kg、比在用商用关节高约 60%、轻 18.6%，台架同条件两倍额定扭矩下跳跃高 12.0%。（来源性质：均为**作者声称**，其中执行器密度与台架对比为论文自报**实测**）
-
-**④ 一条反直觉的评估教训** —— [六条件框架](https://arxiv.org/abs/2609.22299)
-
-- **分析**：这篇不提供方法，只提供**失效定位**。把「机器人遇到不熟悉物理条件时的诊断与适应」拆成六个有序条件后，结论是：受控环境下整条链成立，迁移到未见机制后断在**证据使用**这一环 —— 轨迹里明明有信息（仅用轨迹增量的线性模型能恢复正确选择），冻结的解码器却完全不改变决定，这类决策掉到随机水平；而用低成本证据就能解决的决策依然正确。危险之处在于这种分化会被**总体准确率掩盖**。（来源性质：**作者声称**，预印本）
-
-### 嵌入式
-
-**① 部署侧的重心从「模型压缩」转到「运行时自建」** —— [vla.cpp](https://arxiv.org/abs/2606.08094) · [vla.simd](https://arxiv.org/abs/2609.24274) · [FoldQuantVLA](https://arxiv.org/abs/2609.24433)
-
-- **分析**：三条各有落点但指向一致 —— 不再靠「把模型改小」来上边缘，而是**换掉推理栈**。vla.cpp 用统一的 C++ 运行时覆盖 11 种 VLA 架构、彻底摆脱 PyTorch 依赖，在 8GB 的 Jetson Orin Nano 上跑满 200/200 回合；vla.simd 走相反的硬件方向，用共享 SIMD 微内核让策略在 **Raspberry Pi 5** 这种无 GPU 设备上达到 33.5（fp32）/ 81.2（int8）actions/s；FoldQuantVLA 则保留量化路线但把重点放在**激活表示在校准、舍入与整数执行之间的一致性**，并诚实地给出了代价 —— 语言注意力输出与前馈下投影须保留 8 位，Orin 上多约 1 ms。三条共同暴露的规律是：**速度与保真度不能分开验收**（vla.cpp 的「固定输入检查须伴随 rollout 评估」与 FoldQuantVLA 的「保留 8 位换回 12.5 个百分点成功率」是同一件事的两面）。（来源性质：均为**作者声称**，预印本）
-
-**② ESP32-S3 上的 3D 光栅化器把许可证也换了** —— [Jet](https://github.com/CubeCoders/Jet)
-
-- **分析**：Jet 是面向 ESP32/STM32 的无依赖固定功能 3D 光栅化器（C++17）。本次变化有三点：ESP32-S3 上三角形吞吐从约 40k 提升到约 70k tris/sec（作者称靠优化与 SIMD 技巧），480×320 / 16bpp / 60fps 下支持屏幕空间反射与扭曲效果，许可由 AGPL 改为 **MIT**。社区反应集中在优化功力上，也有人追问着色与纹理映射的边界。（来源性质：**作者声称**（性能与优化手段）＋ Hackaday 转述**实测**；社区评价为主观反馈）
-
-### EE/IC
-
-**本窗口无半导体 / EDA / 芯片设计方向的独立条目，不硬凑。** 225 条达标项来自 arXiv（绝大多数，且以 cs.RO 为主）、Reddit（12，含 r/embedded、r/robotics）、Hacker News（9），**无 HBM / 先进制程 / EDA 工具链 / 模拟电路设计类内容**。要注意今天「领域深读」不是全领域均衡采样的结果，而是单一数据源结构造成的偏斜。
-
-与电气 / 机电层最接近的有三条，均已归入上文对应小节，此处只列不重复展开：
-
-- **[双层电子皮肤剪切力感知](https://arxiv.org/abs/2609.22493)** —— FSR 阵列 + 层间 CoP 偏移做三轴力估计，属传感器硬件层面（见「机器人 ①」）。
-- **[宏观尺度静电折纸旋转电机](https://arxiv.org/abs/2601.21976)** —— 唯一一条真正偏电气驱动的条目：**靠电晕放电而非电磁绕组产生扭矩**，-30 kV 驱动、1720 rpm、>0.25 mN·m。值得记的是它的驱动方式（高压静电而非电流-磁场）与量级（扭矩密度 0.11 Nm/kg，比常规关节低数个量级），属探索性研究而非可直用的执行器路线。（来源性质：**作者声称**，预印本）
-- **[齿轮执行器协同设计](https://arxiv.org/abs/2609.22795)** —— 电机-齿轮箱-传感器系统级优化，物理层指标为论文自报**实测**（见「机器人 ③」）。
-
-### AI
-
-**① 前沿模型这一天的主题词是「降价 + 沟通风格」，不是能力跃迁** —— [GPT-6 Sol / Luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/) · [Claude Opus 5.5](https://www.anthropic.com/claude-opus-5-5)
-
-- **分析**：两家同一天发布，共同点是**价格下降的幅度大于能力提升的叙事**。OpenAI 的 Sol/Luna 直接把对应型号价格砍半；Anthropic 把 Opus 输入降 20%（$5→$4）、输出降 20%（$25→$20）并给 1M 上下文；同窗口另有一条 [Artificial Analysis 的 Opus 5.5 基准与推理预算分析（⭐️ 7.0/10）](https://artificialanalysis.ai/models/claude-opus-5-5)，显示 max 设置下每任务成本约为 Opus 5 的一半。社区讨论的落点却大多不在跑分上：OpenAI 那边在比套餐额度（有用户指出 20x 与 5x 并非简单四倍关系），Anthropic 那边在质疑「一边呼吁 pacing the frontier、一边在公告里展示具体进展」的一致性。（来源性质：**作者声称**（官方公告）＋社区转述；定价与规格多来自第三方整理，**待核实**）
-
-**② 「决策模型」：只输出浮点数的一类模型** —— [Jev 与决策模型](https://simonwillison.net/2026/Sep/21/jev/)
-
-- **分析**：TypeSafe AI 的 Jev 接受文本输入但**不输出文本，只返回浮点数** —— 对应类别、是/否、评分与置信度，问题并行评估（问很多与问一个耗时相近）。价格极低：只按输入计费、输出免费，首个模型 $0.042／百万输入 token。作者认为它适合分类类任务（垃圾邮件、打标签、优先级、搜索重排 —— 他实测 BM25 取 100 候选再让 Jev 打分），但同时强调这是**向黑箱机器学习的进一步倒退**：LLM 至少能给理由，Jev 只回一个浮点数，因此**偏见更难拆解**，评测与结构化实验必须前置。他还给了一个生动的偏差演示：让 Jev 给湾区城市打「好城市」分，Cupertino 最高、East Palo Alto 最低。官方文档也承认它不擅长数字、日期与对抗性内容。（来源性质：**作者声称**（第三方技术博客）；定价与行为描述**待核实**）
-
-**③ 安全与供应链** —— [WordPress CVE-2026-87902](https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp) · [Trail of Bits 论 SAML](https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/) · [FBI 数据泄露声明](https://www.404media.co/we-hacked-the-fbi-hackers-say-they-have-data-on-all-fbi-employees/)
-
-- **分析**：三条性质不同，共同点是**问题都在既有结构的边界上**。WordPress 的漏洞在 `locate_template()` 的目录遍历防护，而官方文档九年前就警告过；SAML 的问题被归因于「从多份既有规范拼合而来」带来的 XML 规范化与签名验证歧义；FBI 那条则是社会工程与供应链方向的声明，**细节与规模均未获独立验证**。（来源性质：前两条**作者声称**（安全公告 / 安全公司分析）；FBI 条**待核实**）
-
-</div>
-
-<div id="lang-en" class="lang-section" markdown="1">
-
-# Daily Report — 2026-09-23
 
 > Data source: Horizon News Radar.
 > This window **crawled 340 items → 225 passed the 7.0 threshold** (RSS 319 · Reddit 12 · Hacker News 9 · Telegram 0). **arXiv made up the overwhelming majority of RSS**, so today's top stories are dominated by robotics and embodied AI.
@@ -179,5 +87,3 @@ Three items come closest to the electrical / electromechanical layer, all alread
 **③ Security and supply chain** —— [WordPress CVE-2026-87902](https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-7hp8-65ch-5whp) · [Trail of Bits on SAML](https://blog.trailofbits.com/2026/09/21/saml-a-fractal-of-bad-design/) · [FBI data breach claim](https://www.404media.co/we-hacked-the-fbi-hackers-say-they-have-data-on-all-fbi-employees/)
 
 - **Analysis**: Three items of different natures, with the common thread that **the problems all sit at the edges of existing structures**. The WordPress vulnerability lies in the directory-traversal protection of `locate_template()`, which the official documentation warned about nine years ago; SAML's problems are attributed to XML canonicalization and signature-verification ambiguities arising from "being pieced together from multiple pre-existing specifications"; the FBI item is a claim in the social-engineering and supply-chain direction, with **neither details nor scale independently verified**. (Source nature: the first two **Author's claim** (security advisory / security firm analysis); the FBI item **To be verified**)
-
-</div>

@@ -1,39 +1,9 @@
 ---
 layout: default
-title: 每日日报 2026-09-18
+title: "Horizon Summary: 2026-09-18 (EN)"
 date: 2026-09-18
+lang: en
 ---
-
-<div id="lang-zh" class="lang-section" markdown="1">
-
-# 2026-09-18 日报
-
-> ⚠️ **这是一份补录，不是当日原始产出。**
-> 当日晨间自动化未产出日报，且历史数据无法完整追回；本文只收录可追溯到来源的条目，未为凑篇幅而补充内容。
-> 证据强度标注：估算 / 作者声称 / 实测 / 助手推断；无法判断标「待核实」。
-
-## 一、今日要闻
-
-1. **[用 LLM 写作：草稿工具与作者身份之争](https://sockpuppet.org/blog/2026/09/17/how-to-write-with-an-llm/)** ⭐️ 7.0/10
-   - 博客《How to Write with an LLM》主张把大模型当**起草工具**而不是代笔。在 HN 引发 374 条评论的大讨论。
-   - 证据强度：**社区数据**（HN 页面计数）· 观点部分为**作者声称**
-   - 来源：[原文](https://sockpuppet.org/blog/2026/09/17/how-to-write-with-an-llm/) · [社区讨论（HN，374 评）](https://news.ycombinator.com/item?id=49747070)
-
-## 二、领域深读
-
-### AI
-
-- **话题**：用 LLM 写作的分界线在哪里 —— 起草可以，代笔不行。
-- **分析**：评论区最有实操价值的一条做法是：开发者**坚持自己手写 commit message 和 PR 描述**，只让模型做事实核查、不让它改措辞。理由是这会拖慢速度，但显著加深了自己对「智能体生成的代码」的理解。另一位评论者提到模型曾指出一份文档，直接动摇了他整篇文章的论点 —— 说明**事实核查**是目前争议最小的用法。分歧点在风格：有人认为「初稿质量差」的判断已过时，也有人担心 AI 代笔会让读者读得更少、且阅读时不断揣测作者是不是 AI。
-- 来源：[原文](https://sockpuppet.org/blog/2026/09/17/how-to-write-with-an-llm/) · [社区讨论](https://news.ycombinator.com/item?id=49747070)
-
-> 本窗口**机器人 / 嵌入式 / EE-IC 三个领域实质为零**，属数据源结构所致，不硬凑。
-
-</div>
-
-<div id="lang-en" class="lang-section" markdown="1">
-
-# Daily Report — 2026-09-18
 
 > ⚠️ **This is a supplementary (backfilled) report, not the original output of the day.**
 > The morning automation produced no report that day, and the historical data could not be fully recovered; this article only includes items traceable to their sources, with no content added to fill space.
@@ -55,5 +25,3 @@ date: 2026-09-18
 - Sources: [Original post](https://sockpuppet.org/blog/2026/09/17/how-to-write-with-an-llm/) · [Community discussion](https://news.ycombinator.com/item?id=49747070)
 
 > For this window, **Robotics / Embedded / EE-IC are substantively zero across all three domains**, which is a consequence of the data-source structure, not padded.
-
-</div>

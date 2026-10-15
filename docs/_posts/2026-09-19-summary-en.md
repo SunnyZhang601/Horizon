@@ -1,117 +1,13 @@
 ---
 layout: default
-title: 每日日报 2026-09-19
+title: "Horizon Summary: 2026-09-19 (EN)"
 date: 2026-09-19
+lang: en
 ---
-
-<div id="lang-zh" class="lang-section" markdown="1">
-
-> 来源窗口：2026-09-17 至 2026-09-18（24h 滚动，条目时间戳集中在 9 月 18 日）。数据源：Horizon 新闻雷达。
-> 本次抓取：221 条内容筛出 148 条重要资讯，其中约 135 条来自 arXiv Robotics，其余为 Hacker News 社区讨论与工程博客。
-
-# 2026-09-19 日报
-
-## 一、今日要闻
-
-> 148 条中 arXiv 机器人论文占九成以上，故下列仅取本窗口评分最高与来源较硬者。
-
-1. **[光子发射引导激光故障注入攻破 RP2350 安全调试](https://donjon.ledger.com/blog/rp2350-secure-debug-laser-fault-injection/)** ⭐️ 8.0/10 — Ledger Donjon 用光子发射热点定位 + 激光故障注入，在 RP2350 A4 上恢复了被保护的安全调试接口；社区讨论认为原研究约 25 万美元的设备门槛，家庭实验室以不到 1 万美元（甚至 50 美元的 PicoEMP 替代 5000 美元的 ChipShouter）即可部分复现。（[社区讨论](https://news.ycombinator.com/item?id=49757050)）
-2. **[ZCode 被指静默上传用户 Git 历史至云端](https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/)** ⭐️ 8.0/10 — 智谱 z.ai 的 AI 编程应用 ZCode 被指把整个工作区（含完整 `.git` 历史、reflog、LFS 缓存、全局应用配置）加密上传至阿里云 OSS，界面开关无法阻止；厂商已声明致歉并归因「代码库索引」功能。（[社区讨论](https://news.ycombinator.com/item?id=49750694)）
-3. **[用 AI「氛围编程」证明康威猜想](https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/)** ⭐️ 8.0/10 — Dan Abramov 用 AI 推导出超实数相关康威猜想的一个证明并开源；利兹大学 Vincenzo Mantova 教授仍在审阅，**正确性与重要性尚无定论**（待核实）。（[社区讨论](https://news.ycombinator.com/item?id=49755024)）
-4. **[AthenaZero：低惯量双臂机器人实现动态操作](https://arxiv.org/abs/2609.19194)** ⭐️ 8.0/10 — 用准直驱执行器 + 传动远程化把有效末端质量降到接近人类、比传统高减速比机械臂低约一个数量级，完成 30 m/s 投掷与 14 m/s 级接球/击球，并做了机器人对机器人、人对机器人的击球练习。
-5. **[碰撞网格投毒攻击威胁机器人操作策略](https://arxiv.org/abs/2609.18122)** ⭐️ 8.0/10 — 只改 3D 资产的碰撞网格、保持视觉网格不变，用投毒资产训练的策略在仿真中表现正常、真机部署后性能下降或产生物理安全风险；现有资产审查覆盖恶意软件/版权/格式，却不检查「视觉—碰撞一致性」，作者评估的若干防御均不足以抵御。
-6. **[AMB3R-SLAM：消费级 GPU 实现公里级实时单目 SLAM](https://arxiv.org/abs/2609.19518)** ⭐️ 8.0/10 — 用分层后端（局部→中层→全局一致性）替代静态世界假设下的全局捆绑调整，单卡实时重建 1 万帧以上公里级轨迹，原生处理动态场景；VBR / Oxford Spires 上 ATE 较前最优降 70%+，加 LiDAR 后在 KITTI 与 VBR 降到亚米级（结果待复现）。
-7. **[GigaBrain-WBC-0.5 / InterTrack：人形全身追踪行为世界模型](https://arxiv.org/abs/2608.18234)** ⭐️ 8.0/10 — 用 Transformer 联合预测下一动作、状态与行为分布，学习以环境为条件的动力学；论文自报跨地形交互 81.3% 成功率、跌倒恢复 99.3%，称首次实现人形机器人实时跨地形全身遥操作（**数据为作者自报、未经独立验证**）。
-8. **[Android 17 新 API 未同步 AOSP 引发开放性质疑](https://grapheneos.social/@GrapheneOS/117282080803799576)** ⭐️ 7.0/10 — GrapheneOS 指出 Android 17 的部分新 API 未按惯例同步进 AOSP，公开源码与量产系统的差距进一步扩大。
-9. **[低阻抗 9 自由度直驱机械夹爪实现高带宽物理交互](https://arxiv.org/abs/2608.09198)** ⭐️ 7.0/10 — 直驱电机 + 1:2 低减速比差速传动的三指 9-DoF 夹爪，执行器质量集中于基座、两电机并联差速在屈曲时放大扭矩；实测标称抓取力约 18 N、指尖力 4.7 N，电机对系统惯量贡献仅 0.236%，断电时最大被动机械阻抗 50.1 N/m。
-10. **[Cloudflare 用数学优化再省 100TB 内存](https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/)** ⭐️ 7.0/10 — 把 PBR 可缓存负载均衡器中用于一致性哈希的 ketama 环换成更小的结构、虚拟节点减约 90%，在全球机群再回收 100TB 以上内存（约 130 台服务器的内存量），且切换期同时保留新旧两版哈希环以避免源站流量激增。（[社区讨论](https://news.ycombinator.com/item?id=49758580)）
-11. **[实用信息的数学理论：扩展香农框架](https://arxiv.org/abs/2609.10986)** ⭐️ 7.0/10 — 用「等目标映射」形式化「殊途同归」（通向同一最优动作的不同语义路径视为实用等价），建立句法/语义/实用三层层级，定义实用熵与上行下行实用互信息，并把无损信源编码、信道编码与率失真定理推广到终端动作层面；引入 VoI / CoI 作为率失真的决策论对偶（arXiv v3 预印本，无同行评审）。
-
-## 二、领域深读（机器人 · 嵌入式 · EE/IC · AI）
-
-### 🤖 机器人
-
-**1. 力控硬件的共同答案：低减速比 + 把质量赶到基座** — [DDD 9-DoF 直驱夹爪](https://arxiv.org/abs/2608.09198) 与 [AthenaZero](https://arxiv.org/abs/2609.19194) 在同一窗口出现，解决的是同一个物理矛盾：高减速比换来扭矩，却同时带来摩擦、反射惯性和高机械阻抗，于是高速/高加速度的动态交互做不了。
-
-- **分析**：两条路线都把「减速比」当成可调量而不是天花板 —— DDD 用 1:2 差速传动 + 两电机并联，在屈曲姿态下放大扭矩，把执行器质量集中到基座以降低运动连杆转动惯量；AthenaZero 更进一步，用传动远程化（transmission remotization）把电机从关节挪走。二者都强调**力矩透明性**，DDD 还给出「电机对系统惯量贡献 0.236%」和「断电被动阻抗 50.1 N/m」这类可量化指标，并明确把结论落在「为无传感器本体感知力估计提供基础」上。
-- **来源**：[arXiv 2608.09198](https://arxiv.org/abs/2608.09198) · [arXiv 2609.19194](https://arxiv.org/abs/2609.19194)
-
-**2. 只拿到标量测量时，姿态还收敛吗？** — [SO(3) 上的互补滤波用于标量测量姿态估计](https://arxiv.org/abs/2604.08099)
-
-- **分析**：传统互补滤波假设每个惯性向量能给出完整的三维投影，而这篇文章处理的是**传感器只给出标量投影**（即某个已知惯性向量在机体坐标系某个传感方向上的投影）的情形，直接在 SO(3) 上设计观测器以避免欧拉角奇异性。结论是可执行的判据：当**至少三个惯性向量沿共同的机体坐标系方向**被测量且满足持续激励时，几乎全局渐近稳定；**只有两个标量测量**时，给出渐近收敛的充分条件与吸引域的显式刻画。局限是仅数值仿真，无硬件实验。
-- **来源**：[arXiv 2604.08099](https://arxiv.org/abs/2604.08099)
-
-**3. 没有额外力/触觉硬件，怎么拿到「该用多大力」的标签** — [四通道双边遥操作实现无额外硬件的柔顺性辨识](https://arxiv.org/abs/2609.19976)
-
-- **分析**：文章把问题归到可辨识性——实际位姿与测得力**无法区分**操作者的目标平衡位置与刚度，所以 VR 控制器、SpaceMouse、手持夹爪在原理上就给不出柔顺性监督。四通道双边遥操作把主臂当作「目标平衡位置」的独立测量，歧义被消掉，于是仅靠机械臂**已有的关节力矩传感**就能回归辨识出逐轴刚度，实现零标注成本、逐时间步、与方向相关的柔顺性标签，用于微调 VLA 使其同时输出位姿与刚度。Franka Research 3 擦拭任务上，五种策略里只有该方法在「用力擦」指令下改变了接触力（RMS 6.4N → 9.1N，Cohen's d=0.89，p=0.023）。
-- **来源**：[arXiv 2609.19976](https://arxiv.org/abs/2609.19976)
-
-**4. 形态与控制器联合设计：决定负载能力的是执行器包络，不是运动做没做出来** — [GLAMDRING：强化学习联合设计四足机器人与 CPG 步态](https://arxiv.org/abs/2609.19452)
-
-- **分析**：给定前进速度边界、每执行器功率预算、执行器库与有效载荷要求，框架同时输出连杆几何 + 各关节执行器选型 + 基于 Hopf 振荡器的 CPG 步态策略，按最大速度 / 最小运输成本 / 最大载荷裕度排序候选。工程上最有价值的一条是：**决定可实现有效载荷能力的是「执行器包络可行性」，而非单纯的「运动成功」**；另有「多数设计中典型动物步态会自然涌现」。局限：预印本、未经同行评审、摘要未给具体数据。
-- **来源**：[arXiv 2609.19452](https://arxiv.org/abs/2609.19452)
-
-**5. 仿真资产本身成了攻击面** — [碰撞网格投毒（CMP）](https://arxiv.org/abs/2609.18122)
-
-- **分析**：3D 资产里视觉网格负责渲染、碰撞网格负责物理，两者**允许不一致**（为省算力可粗糙近似），这个「视觉—碰撞鸿沟」是合法且普遍存在的。攻击者只改碰撞网格，视觉与其他组件不动，被投毒资产可经合法供应链分发；策略在仿真里正常，真机上退化、失效或产生物理安全风险。作者评估的现有防御均不足以抵御。
-- **来源**：[arXiv 2609.18122](https://arxiv.org/abs/2609.18122)
-
-### 🔌 嵌入式
-
-**1. 主动抗故障注入的 MCU 也守不住物理接触** — [RP2350 安全调试被激光故障注入攻破](https://donjon.ledger.com/blog/rp2350-secure-debug-laser-fault-injection/)
-
-- **分析**：RP2350 是首批在量产芯片里内置主动抗故障注入特性（毛刺检测器、冗余协处理器）的通用 MCU，安全启动 + OTP 被 DIY FIDO2 安全密钥项目（Pico Keys 等）当作密钥保护的地基。这次是「光子发射显微定位热点 + SWD 引导注入」的组合拳，绕过了安全调试保护，直接推翻上述假设。更要紧的是成本判断：社区认为复现门槛远低于原研究的约 25 万美元，家庭实验室不到 1 万美元即可，甚至有 50 美元级替代方案。
-- **来源**：[Ledger Donjon 博客](https://donjon.ledger.com/blog/rp2350-secure-debug-laser-fault-injection/) · [社区讨论](https://news.ycombinator.com/item?id=49757050)
-
-**2. 把「反应」下移到驱动层：异步驱动扑翼机器人的无传感碰撞响应** — [首款异步驱动扑翼机器人](https://arxiv.org/abs/2609.19480)
-
-- **分析**：昆虫的异步肌靠内在牵张激活自发振翅，无需神经信号；论文首次把异步（自激）驱动用到可飞行扑翼机器人上，机翼因此**无需控制输入**就能响应机体共振力学变化，并在**无外部传感**的情况下对障碍物碰撞做出瞬时反应，杂乱环境飞行测试中稳定性与性能均优于同步驱动。作者的框架是「低级驱动动力学」与「高级感觉运动系统」分工的具身控制。
-- **来源**：[arXiv 2609.19480](https://arxiv.org/abs/2609.19480)
-
-**3. 逐事件、不攒帧：事件相机的低延迟路线** — [REACT：全脉冲状态空间模型](https://arxiv.org/abs/2609.19204)
-
-- **分析**：多数事件相机学习方法先把事件累积成帧或时间箱，积分延迟就在那里产生；REACT 直接逐事件处理原始数据，核心是复数脉冲神经元 C-SiLIF，由物理事件间隔驱动连续时间动力学，状态以**单个事件的时间分辨率**演化。EvTTC 上相对 TTC 误差 9.59%、端到端延迟 4.6 ms（按平均接近速度折算约 4 cm 车辆位移，最快的竞争学习方法为 1 m），支持随时预测与零样本迁移，INT8 量化后每 32,768 事件能耗从 18.5 mJ 降到 2.8 mJ。无同行评审与独立验证。
-- **来源**：[arXiv 2609.19204](https://arxiv.org/abs/2609.19204)
-
-### ⚡ EE/IC
-
-**1. 深度传感器的排名会随被测对象翻转** — [商用深度传感器医学应用精度基准测试](https://arxiv.org/abs/2606.13028)
-
-- **分析**：以触针采样为真值、约 50 cm 距离，对四条路径四种型号（Intel RealSense D405 立体视觉、PMD Flexx2 飞行时间、Stereolabs ZED 2i 立体视觉、Zivid 2M+ 60 结构光）在猪骨、猪腹部标本与硅胶肾脏体模上做基准。结论有两点：Zivid 2M+ 60 在所有对象、所有指标上最好；**ZED 2i 在真实组织上排第二，在体模上排最后** —— 排名随标本类型变化，原因是标本含均匀表面、镜面反射与次表面散射这三类真实难点。
-- **来源**：[arXiv 2606.13028](https://arxiv.org/abs/2606.13028)
-
-> **本窗口说明（不硬凑）**：148 条里没有任何 IC 设计、EDA、模拟/数字电路或半导体工艺类条目；唯一贴近 EE/IC 的只有上文第 1 条的传感器评测与嵌入式栏的 RP2350 芯片安全工作。本窗口资讯池约九成为 arXiv Robotics，EE/IC 类缺失属数据源结构所致，非筛选遗漏。
-
-### 🧠 AI
-
-**1. 「AI 证明」的验收问题：产出必须有独立审阅者** — [用 AI 氛围编程证明康威猜想](https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/)
-
-- **分析**：作者公开了 AI 辅助推导的证明与「为什么我认为它是对的」一节，但社区讨论的落点不在「AI 能不能做数学」，而在**证明的当前地位**：利兹大学 Mantova 教授正在审阅，尚未被数学界确认。评论里最有操作性的建议是——作者应持续化简，直到自己能独立跟随每一步论证，并核查各段是否只是对已有论证的复制；另有评论强调数学家才是能发挥 AI 价值的一方，AI 更像「无限猴子定理」里的猴子。
-- **来源**：[overreacted.io](https://overreacted.io/how-i-vibed-a-proof-of-conways-conjecture/) · [社区讨论](https://news.ycombinator.com/item?id=49755024)
-
-**2. 信息的价值可以定义在「是否引导出同一个行动」上** — [实用信息的数学理论：扩展香农框架](https://arxiv.org/abs/2609.10986)
-
-- **分析**：香农框架衡量的是符号保真度，不衡量信息对**后续决策**的价值；这篇用「等目标映射」把通向同一最优动作的不同语义路径视为实用等价，建立句法→语义→实用三层层级（每层抽象都丢掉与任务无关的区分），定义实用熵、上行/下行实用互信息，并证明无损信源编码、信道编码与率失真定理在终端动作层面的对应版本；再用 VoI（实用信息价值）与 CoI（实用信息成本）作为率失真的决策论对偶，给出跨层优化的拉格朗日对偶框架，实用效率界 `E_p(λ)=sup_R[Φ_p(R)−λCoI_p(R)]` 刻画给定资源价格下的最大净效用。预印本，无同行评审与应用证据。
-- **来源**：[arXiv 2609.10986](https://arxiv.org/abs/2609.10986)
-
-**3. 长时程 agent 的恢复：要回滚状态，还要留住经验** — [RIR：Rollback-Induced Reflection](https://arxiv.org/abs/2609.18304)
-
-- **分析**：长时程 agent 的单个错误动作会改变后续状态与观测，错误随时间累积。已有恢复方法二分：修正上下文但不修复被改变的环境状态；回滚到早期状态却丢掉已获得的经验。RIR 把恢复当成「回滚边界控制」，联合决定**何时干预、从何处恢复、恢复后保留哪些信息**，从被放弃的轨迹里提炼可复用知识，并用回滚深度与保留记忆上的统一算子刻画恢复过程；三个长时程基准上报告在多 LLM 骨干上持续提升（未给具体基准与量化指标，效果待验证）。
-- **来源**：[arXiv 2609.18304](https://arxiv.org/abs/2609.18304)
-
-**4. agent 的权限边界不是「开关」问题** — [ZCode 静默上传工作区](https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/)
-
-- **分析**：争议点不在某一家的实现，而在结构：AI 编程 agent 需要读本地代码库，权限分类器**本质上是模型在猜测行为是否合规**，沙箱被绕过时部分工具还会主动告知用户。评论者补充的同类现象（Windows Defender 反复请求上传 Codex 工作文件、GLM/DeepSeek 倾向读取 dotfiles 与 .gitignore 中列出的文件）指向同一个怀疑方向——密钥外泄路径。由于厂商持有唯一密钥，用户难以自行验证或删除已上传数据。
-- **来源**：[ferstar.org 调查](https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/) · [社区讨论](https://news.ycombinator.com/item?id=49750694)
-
-</div>
-
-<div id="lang-en" class="lang-section" markdown="1">
 
 > Source window: 2026-09-17 to 2026-09-18 (24h rolling; item timestamps concentrated on September 18). Data source: Horizon News Radar.
 > This crawl: 221 items filtered down to 148 important items, of which about 135 came from arXiv Robotics, the rest being Hacker News community discussions and engineering blogs.
 
-# Daily Report — 2026-09-19
 
 ## 1. Top Stories
 
@@ -205,5 +101,3 @@ date: 2026-09-19
 
 - **Analysis**: the point of contention is not any one vendor's implementation but the structure: AI coding agents need to read local codebases, so the permission classifier is **essentially a model guessing whether behavior is compliant**, and when the sandbox is bypassed some tools even proactively inform the user. Commenters added similar phenomena (Windows Defender repeatedly requesting to upload Codex working files; GLM/DeepSeek tending to read dotfiles and files listed in .gitignore) pointing in the same suspicious direction — key leakage paths. Since the vendor holds the only key, users cannot easily verify or delete already-uploaded data on their own.
 - **Sources**: [ferstar.org investigation](https://blog.ferstar.org/en/posts/zcode-silent-workspace-snapshot-upload/) · [Community discussion](https://news.ycombinator.com/item?id=49750694)
-
-</div>
