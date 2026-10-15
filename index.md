@@ -19,7 +19,7 @@ title: Home
 
 <ul>
   {% assign zh_posts = site.posts | where: "lang", "zh" %}
-  {% for post in zh_posts limit:20 %}
+  {% for post in zh_posts limit:5 %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }}</a>
     </li>
@@ -61,7 +61,7 @@ Welcome to [Horizon](https://github.com/thysrael/Horizon), an AI-driven informat
 
 <ul>
   {% assign en_posts = site.posts | where: "lang", "en" %}
-  {% for post in en_posts limit:20 %}
+  {% for post in en_posts limit:5 %}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.date | date: "%Y-%m-%d" }}</a>
     </li>
