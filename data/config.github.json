@@ -141,6 +141,190 @@
         "enabled": true,
         "category": "ai-news",
         "profile": "tech-news"
+      },
+      {
+        "name": "The Rundown AI",
+        "url": "https://www.therundown.ai/feed",
+        "enabled": true,
+        "category": "ai-news",
+        "profile": "tech-news"
+      },
+      {
+        "name": "TLDR AI",
+        "url": "https://tldr.tech/api/rss/ai",
+        "enabled": true,
+        "category": "ai-news",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Import AI (Jack Clark)",
+        "url": "https://jack-clark.net/feed/",
+        "enabled": true,
+        "category": "ai-news",
+        "profile": "tech-news"
+      },
+      {
+        "name": "OpenAI Blog",
+        "url": "https://openai.com/blog/rss.xml",
+        "enabled": true,
+        "category": "ai-labs",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Google DeepMind Blog",
+        "url": "https://deepmind.google/blog/rss.xml",
+        "enabled": true,
+        "category": "ai-labs",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Hugging Face Blog",
+        "url": "https://huggingface.co/blog/feed.xml",
+        "enabled": true,
+        "category": "ai-tools",
+        "profile": "tech-news"
+      },
+      {
+        "name": "GitHub Blog",
+        "url": "https://github.blog/feed/",
+        "enabled": true,
+        "category": "dev-tools",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Andrej Karpathy",
+        "url": "https://karpathy.bearblog.dev/feed/",
+        "enabled": true,
+        "category": "ai-research",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Krebs on Security",
+        "url": "https://krebsonsecurity.com/feed/",
+        "enabled": true,
+        "category": "security",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Troy Hunt",
+        "url": "https://www.troyhunt.com/rss/",
+        "enabled": true,
+        "category": "security",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "antirez",
+        "url": "https://antirez.com/rss",
+        "enabled": true,
+        "category": "software-engineering",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Mitchell Hashimoto",
+        "url": "https://mitchellh.com/feed.xml",
+        "enabled": true,
+        "category": "software-engineering",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "matklad",
+        "url": "https://matklad.github.io/feed.xml",
+        "enabled": true,
+        "category": "software-engineering",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "rachelbythebay",
+        "url": "https://rachelbythebay.com/w/atom.xml",
+        "enabled": true,
+        "category": "software-engineering",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Lucumr Pocoo (Armin Ronacher)",
+        "url": "https://lucumr.pocoo.org/feed.atom",
+        "enabled": true,
+        "category": "software-engineering",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Eli Bendersky",
+        "url": "https://eli.thegreenplace.net/feeds/all.atom.xml",
+        "enabled": true,
+        "category": "software-engineering",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Gwern",
+        "url": "https://gwern.substack.com/feed",
+        "enabled": true,
+        "category": "ai-research",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Dwarkesh Podcast",
+        "url": "https://www.dwarkesh.com/feed",
+        "enabled": true,
+        "category": "ai-research",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Paul Graham Essays",
+        "url": "https://www.aaronsw.com/2002/feeds/pgessays.rss",
+        "enabled": true,
+        "category": "essays",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Daring Fireball",
+        "url": "https://daringfireball.net/feeds/main",
+        "enabled": true,
+        "category": "essays",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Anil Dash",
+        "url": "https://anildash.com/feed.xml",
+        "enabled": true,
+        "category": "essays",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Pluralistic (Cory Doctorow)",
+        "url": "https://pluralistic.net/feed/",
+        "enabled": true,
+        "category": "essays",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "righto.com (Ken Shirriff)",
+        "url": "https://www.righto.com/feeds/posts/default",
+        "enabled": true,
+        "category": "hardware",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "computer.rip",
+        "url": "https://computer.rip/rss.xml",
+        "enabled": true,
+        "category": "hardware",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
       }
     ],
     "reddit": {
@@ -202,15 +386,31 @@
     "time_window_hours": 24
   },
   "digest": {
-    "max_items": null,
+    "max_items": 25,
     "profile_order": [
       "tech-news",
       "tech-blog",
       "finance-news"
     ],
-    "category_groups": {},
+    "category_groups": {
+      "ai": {
+        "name": "AI / 机器学习",
+        "limit": 12,
+        "categories": ["ai-news", "ai-labs", "ai-tools", "ai-research", "llm-inference"]
+      },
+      "dev": {
+        "name": "开发 / 工程",
+        "limit": 8,
+        "categories": ["software-engineering", "dev-tools", "security", "linux-kernel"]
+      },
+      "industry": {
+        "name": "行业 / 硬件",
+        "limit": 5,
+        "categories": ["github-trending", "semiconductors", "hardware"]
+      }
+    },
     "default_group": "other",
-    "default_group_limit": null
+    "default_group_limit": 5
   },
   "webhook": {
     "enabled": true,
