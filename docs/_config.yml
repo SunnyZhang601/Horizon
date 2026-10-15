@@ -7,6 +7,7 @@ url: "https://thysrael.github.io" # the base hostname & protocol for your site, 
 # Build settings
 markdown: kramdown
 future: true # Allow future posts to be published
+permalink: /daily/:year/:month/:day/:title.html # unify all post URLs under /daily/YYYY/MM/DD/
 plugins:
   - jekyll-feed
 feed:

@@ -10,7 +10,7 @@ title: 每日日报
 晨间自动化整理的每日要闻与深读（Horizon 新闻雷达），中英双语：
 
 <ul>
-  {% assign daily_pages = site.pages | where: "dir", "/daily/" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
+  {% assign daily_pages = site.posts | where: "lang", "zh" %}
   {% for p in daily_pages limit:100 %}
     <li>
       <a href="{{ p.url | relative_url }}">{{ p.date | date: "%Y-%m-%d" }}</a>
@@ -27,7 +27,7 @@ title: 每日日报
 An automated morning digest of top stories and deep dives (Horizon News Radar), in Chinese and English:
 
 <ul>
-  {% assign daily_pages_en = site.pages | where: "dir", "/daily/" | where_exp: "p", "p.name != 'index.md'" | sort: "date" | reverse %}
+  {% assign daily_pages_en = site.posts | where: "lang", "en" %}
   {% for p in daily_pages_en limit:100 %}
     <li>
       <a href="{{ p.url | relative_url }}">{{ p.date | date: "%Y-%m-%d" }}</a>
