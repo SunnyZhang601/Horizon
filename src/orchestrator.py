@@ -280,6 +280,22 @@ class HorizonOrchestrator:
                 f"{self.icons['ai']} Analyzed {len(analyzed_items)} items with AI\n"
             )
 
+            # Items whose analysis failed (score=None) are silently dropped by the
+            # threshold filter, so count and surface them explicitly.
+            analysis_failed_count = sum(
+                1
+                for item in analyzed_items
+                if item.processing is None
+                or item.processing.analysis is None
+                or item.processing.analysis.score is None
+            )
+            if analysis_failed_count:
+                self.console.print(
+                    f"[yellow]Warning: {analysis_failed_count} items failed AI "
+                    "analysis (score=None) and will be skipped from the digest"
+                    "[/yellow]"
+                )
+
             # 5. Filter, deduplicate, and balance the digest
             filtering_result = await self.select_digest_items(
                 analyzed_items,
@@ -369,6 +385,7 @@ class HorizonOrchestrator:
                         summary=summary,
                         important_items=important_items,
                         all_items_count=len(all_items),
+                        analysis_failed_count=analysis_failed_count,
                         date=today,
                         lang=lang,
                         summarizer=summarizer,

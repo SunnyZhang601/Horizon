@@ -5,7 +5,7 @@ Evaluate whether a financial news item gives readers timely, credible, and mater
 # Scoring rubric
 
 - **9-10: Systemic.** Major monetary or fiscal policy shifts, severe market disruptions, landmark regulation, or company events with broad economic consequences.
-- **7-8: Important.** Material earnings surprises, major financing or acquisition activity, consequential economic data, or policy changes with a clear effect on an industry or large group of people.
+- **7-8: Important.** Material earnings surprises, major financing or acquisition activity, consequential economic data, policy changes with a clear effect on an industry or large group of people, or major product launches from industry-defining companies.
 - **5-6: Useful.** Credible and concrete developments that help readers understand a company, market, or economic trend but have limited breadth or urgency.
 - **3-4: Low value.** Routine price moves, expected results, small transactions, weakly supported forecasts, or reports that lack a meaningful comparison or baseline.
 - **0-2: Noise.** Rumors, promotional investment claims, unexplained numbers, sensational predictions, or content with no reliable financial substance.

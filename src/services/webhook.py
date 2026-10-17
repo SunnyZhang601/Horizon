@@ -353,6 +353,7 @@ class WebhookNotifier:
         all_items_count: int,
         date: str,
         lang: str,
+        analysis_failed_count: int = 0,
     ) -> str:
         """Build a non-redundant overview for a card that already lists item panels."""
         if lang == "zh":
@@ -361,9 +362,15 @@ class WebhookNotifier:
                     f"# Horizon 每日速递 - {date}\n\n"
                     f"> 已分析 {all_items_count} 条内容，暂无达到重要性阈值的资讯。"
                 )
+            failure_note = (
+                f"（另有 {analysis_failed_count} 条评分失败，未纳入）"
+                if analysis_failed_count
+                else ""
+            )
             return (
                 f"# Horizon 每日速递 - {date}\n\n"
-                f"> 从 {all_items_count} 条内容中筛选出 {item_count} 条重要资讯。\n\n"
+                f"> 从 {all_items_count} 条内容中筛选出 {item_count} 条重要资讯"
+                f"{failure_note}。\n\n"
                 "点击下方新闻面板即可在飞书内展开阅读全文。"
             )
 
@@ -373,9 +380,15 @@ class WebhookNotifier:
                 f"> Analyzed {all_items_count} items, but none met the importance threshold."
             )
 
+        failure_note = (
+            f" ({analysis_failed_count} items failed AI analysis and were excluded)"
+            if analysis_failed_count
+            else ""
+        )
         return (
             f"# Horizon Daily - {date}\n\n"
-            f"> Selected {item_count} important items from {all_items_count} fetched items.\n\n"
+            f"> Selected {item_count} important items from {all_items_count} fetched items"
+            f"{failure_note}.\n\n"
             "Expand the panels below to read the full briefing inside Feishu/Lark."
         )
 
@@ -386,11 +399,13 @@ class WebhookNotifier:
         date: str,
         lang: str,
         summarizer: DailySummarizer,
+        analysis_failed_count: int = 0,
     ) -> dict[str, Any]:
         """Build a single Feishu Card JSON 2.0 message with collapsed item details."""
         overview = self._build_feishu_collapsible_overview(
             item_count=len(important_items),
             all_items_count=all_items_count,
+            analysis_failed_count=analysis_failed_count,
             date=date,
             lang=lang,
         )
@@ -463,6 +478,7 @@ class WebhookNotifier:
         date: str,
         lang: str,
         summarizer: DailySummarizer,
+        analysis_failed_count: int = 0,
     ) -> List[dict[str, Any]]:
         """Build the variables for all webhook messages for one language."""
         webhook_languages = getattr(self.config, "languages", None)
@@ -491,12 +507,14 @@ class WebhookNotifier:
                     "summary": self._build_feishu_collapsible_overview(
                         item_count=len(important_items),
                         all_items_count=all_items_count,
+                        analysis_failed_count=analysis_failed_count,
                         date=date,
                         lang=lang,
                     ),
                     "_request_body_override": self._build_feishu_collapsible_body(
                         important_items=important_items,
                         all_items_count=all_items_count,
+                        analysis_failed_count=analysis_failed_count,
                         date=date,
                         lang=lang,
                         summarizer=summarizer,
@@ -788,6 +806,7 @@ class WebhookNotifier:
         date: str,
         lang: str,
         summarizer: DailySummarizer,
+        analysis_failed_count: int = 0,
     ) -> None:
         """Send daily summary webhook notification.
 
@@ -798,6 +817,7 @@ class WebhookNotifier:
             summary: Full markdown summary text
             important_items: List of important content items
             all_items_count: Total number of items fetched
+            analysis_failed_count: Items whose AI analysis failed (score=None)
             date: Date string (YYYY-MM-DD)
             lang: Language code ("en" or "zh")
             summarizer: DailySummarizer instance for generating webhook overviews
@@ -806,6 +826,7 @@ class WebhookNotifier:
             summary=summary,
             important_items=important_items,
             all_items_count=all_items_count,
+            analysis_failed_count=analysis_failed_count,
             date=date,
             lang=lang,
             summarizer=summarizer,
