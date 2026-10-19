@@ -347,6 +347,88 @@
         "category": "hardware",
         "profile": "tech-blog",
         "content_extractor": "trafilatura"
+      },
+      {
+        "name": "IEEE Spectrum Robotics",
+        "url": "https://spectrum.ieee.org/feeds/topic/robotics.rss",
+        "enabled": true,
+        "category": "robotics",
+        "profile": "tech-news"
+      },
+      {
+        "name": "TechCrunch Robotics",
+        "url": "https://techcrunch.com/category/robotics/feed/",
+        "enabled": true,
+        "category": "robotics",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Robohub",
+        "url": "https://robohub.org/feed/",
+        "enabled": true,
+        "category": "robotics",
+        "profile": "tech-news"
+      },
+      {
+        "name": "arXiv Robotics (cs.RO)",
+        "url": "http://export.arxiv.org/rss/cs.RO",
+        "enabled": true,
+        "category": "robotics",
+        "profile": "tech-news"
+      },
+      {
+        "name": "EE Times",
+        "url": "https://www.eetimes.com/feed/",
+        "enabled": true,
+        "category": "hardware",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/feeds/all",
+        "enabled": true,
+        "category": "hardware",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "IEEE Spectrum Semiconductors",
+        "url": "https://spectrum.ieee.org/feeds/topic/semiconductors.rss",
+        "enabled": true,
+        "category": "semiconductors",
+        "profile": "tech-news"
+      },
+      {
+        "name": "Arduino Blog",
+        "url": "https://blog.arduino.cc/feed/",
+        "enabled": true,
+        "category": "hardware",
+        "profile": "tech-blog"
+      },
+      {
+        "name": "MIT Technology Review AI",
+        "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+        "enabled": true,
+        "category": "ai-news",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "Ars Technica",
+        "url": "https://arstechnica.com/feed/",
+        "enabled": true,
+        "category": "tech",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
+      },
+      {
+        "name": "爱范儿",
+        "url": "https://www.ifanr.com/feed",
+        "enabled": true,
+        "category": "tech",
+        "profile": "tech-news",
+        "content_extractor": "trafilatura"
       }
     ],
     "reddit": {
@@ -414,25 +496,9 @@
       "tech-blog",
       "finance-news"
     ],
-    "category_groups": {
-      "ai": {
-        "name": "AI / 机器学习",
-        "limit": 12,
-        "categories": ["ai-news", "ai-labs", "ai-tools", "ai-research", "llm-inference"]
-      },
-      "dev": {
-        "name": "开发 / 工程",
-        "limit": 8,
-        "categories": ["software-engineering", "dev-tools", "security", "linux-kernel"]
-      },
-      "industry": {
-        "name": "行业 / 硬件",
-        "limit": 5,
-        "categories": ["github-trending", "semiconductors", "hardware"]
-      }
-    },
+    "category_groups": {},
     "default_group": "other",
-    "default_group_limit": 5
+    "default_group_limit": null
   },
   "webhook": {
     "enabled": true,
