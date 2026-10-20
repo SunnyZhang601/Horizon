@@ -132,7 +132,7 @@
       {
         "name": "Hackaday",
         "url": "https://hackaday.com/feed/",
-        "enabled": true,
+        "enabled": false,
         "category": "hardware",
         "profile": "tech-news"
       },
@@ -311,7 +311,7 @@
       {
         "name": "Daring Fireball",
         "url": "https://daringfireball.net/feeds/main",
-        "enabled": true,
+        "enabled": false,
         "category": "essays",
         "profile": "tech-blog",
         "content_extractor": "trafilatura"
@@ -425,7 +425,7 @@
       {
         "name": "爱范儿",
         "url": "https://www.ifanr.com/feed",
-        "enabled": true,
+        "enabled": false,
         "category": "tech",
         "profile": "tech-news",
         "content_extractor": "trafilatura"
